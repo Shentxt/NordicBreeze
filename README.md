@@ -1,5 +1,5 @@
 <div align="center">
-     <h1>󰣇 Shen ~ NordicBreeze Dotfiles ⭐</h1>
+     <h1> 🌸 Shen ~ NordicBreeze Dotfiles 🌸</h1>
  </div>
  
 ![Logotype](/assets/bsp.png "a logo")
@@ -38,116 +38,6 @@ Read carefully: As not everything computers have the same features and kernel. I
 | Theme Brow   |              [Firefox-gx](https://github.com/Godiesc/firefox-gx)               |
 | Lockscreen   | [Betterlocksreen](https://github.com/betterlockscreen/betterlockscreen)        |
 
-** 🌿Directory**
-
-NordicBreeze/ 
- └── .config/
-      ├── bspwm
-          ├── assets
-              ├── effects
-              ├── icons
-              └── walls
-          ├── bar
-              ├── scripts
-              ├── src 
-              ├── config.ini 
-              ├── gylphs.ini 
-              └── modules.ini 
-          ├── scripts 
-              ├── autokill
-              ├── brightnes
-              ├── Brightness
-              ├── BspHideNode
-              ├── bsproot
-              ├── colorpicker
-              ├── colors.ini
-              ├── ExternalRules
-              ├── HideBar
-              ├── KeybindingsHelp
-              ├── MediaControl
-              ├── Menu.txt
-              ├── Notes
-              ├── Opacity
-              ├── OpenApps
-              ├── Run_jgmenu
-              ├── Screenshot
-              ├── SetsVars
-              ├── System.ini
-              ├── Temp.sh 
-              ├── Update
-              ├── Volume
-              ├── Wallselect
-              ├── Weather
-              ├── Welcome
-              └── ytmp3
-          ├── bspwmrc
-          ├── dunstrc 
-          ├── jgmenurc 
-          ├── picom.conf 
-          ├── stalonetrayrc 
-          └── sxhkdrc
-      ├── alacritty
-          ├── alacritty.toml
-          └── fonts.toml
-      ├── cava
-          └── config
-      ├── corectrl
-          └── corectrl
-      ├── gtk-3.0
-          ├── widgets
-          ├── _apps.scss 
-          ├── _colors.scss
-          ├── _colors-public.scss
-          ├── _common.scss
-          ├── _drawing.scss
-          ├── _elementary-colors.scss
-          ├── gtk.css
-          ├── gtk.scss 
-          ├── gtk-dark.css
-          ├── gtk-dark.scss
-          ├── _nord.scss
-          ├── thumbail.png
-          └── _widgets.scss
-      ├── gtk-4.0
-          ├── apps
-          ├── widgets 
-          ├── _apps.scss 
-          ├── _common.scss 
-          ├── _drawing.scss
-          ├── gtk.css
-          ├── gtk.scss 
-          ├── gtk-dark.scss
-          ├── thumbail.png
-          └── _widgets.scss 
-      ├── kvantum
-          ├── nordic-bluish
-          └── kvantum.kvconfig 
-      ├── neofetch
-          ├── assets
-          └── config.conf 
-      ├── nvim 
-          ├── lua
-          ├── init.lua
-          └── lazy-lock.json
-      ├── quotes
-          └── quotes.json
-      ├── ranger
-          ├── colorschemes
-          ├── plugins
-          ├── rc.conf
-          └── rifle.conf 
-      ├── rofi
-          ├── images
-          ├── themes
-          └── config.rasi
-      ├── starship
-          └── starship.toml
-      ├── wezterm
-          └── wezterm.lua
-      └── betterlockscreen
-          ├── betterlockscreenrc
-          └── corrupter
-
 ## 🌿Galery
 
 <details>
@@ -171,7 +61,7 @@ NordicBreeze/
 <details>
 <summary><b><code>Rofi</code></b></summary>
 
-|Desk|Update|
+|Launcher|Wall|Powe|
 |--|--|--|
 |![demo](/assets/Screen/launch.png "demo")|![demo](/assets/Screen/wall.png "demo")|![demo](/assets/Screen/power.png "demo")|
 
@@ -180,7 +70,7 @@ NordicBreeze/
 <details>
 <summary><b><code>Extra</code></b></summary>
 
-|Desk|Update|
+|Notify|Tray|Clipboard|
 |--|--|--|
 |![demo](/assets/Screen/notify.png "demo")|![demo](/assets/Screen/tray.png "demo")|![demo](/assets/Screen/clip.png "demo")|
 
