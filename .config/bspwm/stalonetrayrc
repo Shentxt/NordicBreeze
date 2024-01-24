@@ -1,0 +1,10 @@
+background "#2E3440"
+vertical true
+geometry 4x2-200+75
+grow_gravity SE
+icon_gravity SE
+icon_size 24
+slot_size 33
+kludges force_icons_size
+skip_taskbar true
+window_type utility

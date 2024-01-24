@@ -1,0 +1,19 @@
+#!/bin/bash
+
+if [[ $1 == "--toggle" ]]; then
+        if pgrep stalonetray &>/dev/null; then
+                pkill stalonetray
+                echo "󰁢" > $HOME/.config/bspwm/bar/scripts/tray-status
+                exit 1
+        else
+                stalonetray -c "$HOME"/.config/bspwm/stalonetrayrc &
+                echo "󰁊" > $HOME/.config/bspwm/bar/scripts/tray-status
+        fi
+        exit
+fi
+
+if [[ $1 == "--kill" ]]; then
+        pkill stalonetray
+        echo "󰁢" > $HOME/.config/bspwm/bar/scripts/tray-status
+        exit 1
+fi 

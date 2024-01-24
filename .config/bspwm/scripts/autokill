@@ -1,0 +1,14 @@
+#!/bin/bash
+
+#If some applications do not close or reset when restarting the bspwm add them here
+
+# Pkill
+
+pkill polybar
+
+# Wait a bit
+sleep 1
+
+# Start
+
+ polybar -q ryan-bar -c "$HOME"/.config/bspwm/bar/config.ini & 

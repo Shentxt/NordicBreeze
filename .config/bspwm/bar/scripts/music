@@ -1,0 +1,19 @@
+#!/bin/bash
+
+while true; do
+    player_status=$(playerctl status)
+    if [ "$player_status" = "Playing" ]; then
+        metadata=$(playerctl metadata --format '{{ title }} - {{ artist }}')
+        len=${#metadata}
+        while [ ${#metadata} -lt 20 ]; do
+            metadata+=" "
+        done
+        echo "󰣿  ${metadata:$i:20}"
+        i=$(( (i + 1) % len ))
+    else
+        echo "  Not Playing"
+        i=0
+    fi
+    sleep 0.5
+done
+

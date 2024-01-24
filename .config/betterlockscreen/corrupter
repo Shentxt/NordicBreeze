@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+tmpbg="/tmp/screen.png"
+distortedbg="/tmp/distorted.png"
+
+maim -u "$tmpbg"
+corrupter -mag 3 -boffset 10 -lag 0.01 -meanabber 5 -stdabber 5 -stdoffset 5 "$tmpbg" "$distortedbg"
+betterlockscreen -l -u "$distortedbg"
+rm "$tmpbg" "$distortedbg"

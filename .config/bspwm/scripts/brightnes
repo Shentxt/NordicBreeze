@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# -----------------------------------------------------------------------
+#
+# ██████╗ ██████╗ ██╗ ██████╗ ██╗  ██╗████████╗███╗   ██╗███████╗███████╗
+# ██╔══██╗██╔══██╗██║██╔════╝ ██║  ██║╚══██╔══╝████╗  ██║██╔════╝██╔════╝
+# ██████╔╝██████╔╝██║██║  ███╗███████║   ██║   ██╔██╗ ██║█████╗  ███████╗
+# ██╔══██╗██╔══██╗██║██║   ██║██╔══██║   ██║   ██║╚██╗██║██╔══╝  ╚════██║
+# ██████╔╝██║  ██║██║╚██████╔╝██║  ██║   ██║   ██║ ╚████║███████╗███████║
+# ╚═════╝ ╚═╝  ╚═╝╚═╝ ╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═══╝╚══════╝╚══════╝
+#
+# ----- Author: Shen - url: https://github.com/Shentxt -----
+
+# Get current brightness
+current_brightness=$(xrandr --current --verbose | grep -m 1 -i brightness | cut -f2 -d ' ')
+
+# Change the brightness with xbacklight or some other tool you prefer
+xbacklight -set 50 >/dev/null 2>&1
+
+# Get the new brightness value after the change
+new_brightness=$(xrandr --current --verbose | grep -m 1 -i brightness | cut -f2 -d ' ')
+
+# Compare brightness values ​​to determine if they changed
+if [[ "$new_brightness" != "$current_brightness" ]]; then
+	if (($(echo "$new_brightness < $current_brightness" | bc -l))); then
+		notify-send "Brightnes Dark"
+	else
+		notify-send "Brightnes Light"
+	fi
+fi

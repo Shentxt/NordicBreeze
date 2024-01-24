@@ -1,0 +1,50 @@
+# ~/.config/betterlockscreenrc
+
+# default options
+display_on=0
+span_image=true
+lock_timeout=300
+# (dim blur dimblur pixel dimpixel color)
+fx_list=blur
+dim_level=40
+blur_level=1
+pixel_scale=10,1000
+wallpaper_cmd="feh --bg-fill"
+quiet=false
+# i3lockcolor_bin="i3lock-color" # Manually set command for i3lock-color
+
+# default theme
+# Shadow
+loginbox=c0caf5
+loginshadow=00000000
+
+# Text and font
+locktext="Respawn in..."
+font="minecraft"
+
+# Circles
+insidevercolor=00FF00
+insidecolor=00000000
+insidewrongcolor=FA5858
+
+# Separator
+separatorcolor=c0caf5
+solid_color=c0caf5
+
+# Time
+timecolor=c0caf5
+time_format="%I:%M %p"
+greetercolor=c0caf5
+
+# Verifict
+verifcolor=00FF00
+keyhlcolor=00FF00
+layoutcolor=c0caf5
+
+# Error
+bshlcolor=FA5858
+wrongcolor=FA5858
+modifcolor=FA5858
+ringcolor=c0caf5
+ringwrongcolor=c0caf5
+
