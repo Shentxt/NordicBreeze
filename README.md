@@ -1,15 +1,15 @@
 <div align="center">
-     <h3> 🌸 Shen ~ NordicBreeze Dotfiles 🌸</h3>
+     <h1> 🌸 Shen ~ NordicBreeze Dotfiles 🌸</h1>
  </div>
  
 ![Logotype](/assets/bsp.png "a logo")
 
 # 🌿Sections
 
-- 🌸 [Presentation](https://github.com/Shentxt/NordicBreeze/tree/main#system)
+- 🌸 [Presentations](https://github.com/Shentxt/NordicBreeze/tree/main#system)
 - 🌸 [Galery](https://github.com/Shentxt/NordicBreeze/tree/main#galery)
-- 🌸 [Download](https://github.com/Shentxt/NordicBreeze/tree/main#download)
-- 🌸 [Informations](https://github.com/Shentxt/NordicBreeze/tree/main#informations)
+- 🌸 [Intructions](https://github.com/Shentxt/NordicBreeze/tree/main#download)
+- 🌸 [Informations](https://github.com/Shentxt/NordicBreeze/tree/main#contact-me)
 
 ## 🌿Presentation
 
@@ -18,12 +18,12 @@ This setup aims for visual elegance and fluidity.
 
 Read carefully: As not everything computers have the same features and kernel. I ask you to clarify any problem that I present in the download or post of this one. This is in order to have feedback and be able to improve.
 
-# 🌿Keys-Map
+## 🌿Keys-Map
 
 - **Win+Shift+D:** Open the key display. This key combination can be useful to access various functions in my settings.
 
 
-# 🌿System
+## 🌿System
 
 |    Distro    |                        [Archcraft](https://github.com/archcraft-os)            |
 | :----------: | :----------------------------------------------------------------------------: |
@@ -41,7 +41,7 @@ Read carefully: As not everything computers have the same features and kernel. I
 | Theme Brow   |              [Firefox-gx](https://github.com/Godiesc/firefox-gx)               |
 | Lockscreen   | [Betterlocksreen](https://github.com/betterlockscreen/betterlockscreen)        |
 
-## 🌿Galery
+# 🌿Galery
 
 <details>
 <summary><b><code>Desktop</code></b></summary>
@@ -79,7 +79,7 @@ Read carefully: As not everything computers have the same features and kernel. I
 
 </details>
 
-## 💾Download
+# 💾Download
 
 <div style="background-color: black; color: white; padding: 10px;">
 <pre><code>
@@ -95,7 +95,7 @@ Read carefully: As not everything computers have the same features and kernel. I
 </code></pre>
 </div>
 
-# 💾Removed
+## 💾Removed
 
 <div style="background-color: black; color: white; padding: 10px;">
 <pre><code>
@@ -107,7 +107,7 @@ Read carefully: As not everything computers have the same features and kernel. I
 </code></pre>
 </div>
 
-# 📦Packages
+## 📦Packages
 
 <div style="background-color: black; color: white; padding: 10px;">
 <pre><code>
@@ -144,17 +144,17 @@ Packages/
 </code></pre>
 </div>
 
-## 🌿Contact Me
+# 🌿Contact Me
 
 - [Github](https://github.com/Shentxt)
 
-# 🌿Thanks
+## 🌿Thanks
 
 - 🌸 [Bing-IA](https://www.bing.com/?setlang=es)
 - 🌸 [Arch](https://archlinux.org/)
 - 🌸 [Unixporn](https://www.reddit.com/r/unixporn/)
 
-# 🌿Based in 
+## 🌿Based in 
 
 - 🌸 [Cenunix](https://github.com/cenunix)
 - 🌸 [AlphaTecnolog](https://github.com/AlphaTechnolog/dotfiles)
