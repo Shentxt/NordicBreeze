@@ -48,7 +48,7 @@ retroarch)
 	eval "$consequences"
 	[ "$state" ] || echo "state=pseudo_tiled follow=on"
 	;;
-lol)
+leagueclientux.exe)
 	eval "$consequences"
 	[ "$state" ] || echo "state=pseudo_tiled follow=on"
 	;;
@@ -109,6 +109,10 @@ feh)
 	;;
 copyq)
 	eval "$consequences"
+	[ "$state" ] || echo "state=floating follow=on rectangle=450x400+890+75" 
+	;;
+Youtube_Music)
+  eval "$consequences"
 	[ "$state" ] || echo "state=floating follow=on rectangle=450x400+890+75" 
 	;;
 zenity)

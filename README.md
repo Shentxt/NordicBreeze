@@ -64,7 +64,7 @@ Read carefully: As not everything computers have the same features and kernel. I
 <details>
 <summary><b><code>Rofi</code></b></summary>
 
-|Launcher|Wall|Powe|
+|Launcher|Wall|Power|
 |--|--|--|
 |![demo](/assets/Screen/launch.png "demo")|![demo](/assets/Screen/wall.png "demo")|![demo](/assets/Screen/power.png "demo")|
 
@@ -73,9 +73,9 @@ Read carefully: As not everything computers have the same features and kernel. I
 <details>
 <summary><b><code>Extra</code></b></summary>
 
-|Notify|Tray|Clipboard|
-|--|--|--|
-|![demo](/assets/Screen/notify.png "demo")|![demo](/assets/Screen/tray.png "demo")|![demo](/assets/Screen/clip.png "demo")|
+|Notify|Tray|Clipboard|Music|
+|--|--|--|--|
+|![demo](/assets/Screen/notify.png "demo")|![demo](/assets/Screen/tray.png "demo")|![demo](/assets/Screen/clip.png "demo")|![demo](/assets/Screen/music.png "demo")|
 
 </details>
 
@@ -156,8 +156,7 @@ Packages/
 
 ## 🌿Based in 
 
-- 🌸 [Cenunix](https://github.com/cenunix)
 - 🌸 [AlphaTecnolog](https://github.com/AlphaTechnolog/dotfiles)
 - 🌸 [Juminai](https://github.com/juminai/dotfiles)
 - 🌸 [Gh0stzk](https://github.com/gh0stzk/dotfiles)
-- 🌸 [Ryan](https://github.com/hidayry)
+- 🌸 [Ryan](https://github.com/hidayry/dotfiles-bspwm)
