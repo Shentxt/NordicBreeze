@@ -1,24 +1,27 @@
 <div align="center">
-     <h1> 🌸 Shen ~ NordicBreeze Dotfiles 🌸</h1>
+     <h3> 🌸 Shen ~ NordicBreeze Dotfiles 🌸</h3>
  </div>
  
 ![Logotype](/assets/bsp.png "a logo")
-** 🌿Sections**
 
-- 🌸 [System and Directory]()
-- 🌸 [Galery]()
-- 🌸 [Keys-Maps]()
-- 🌸 [Install and Desintall]()
-- 🌸 [Informations]()
+# 🌿Sections
 
-** 🌿Presentation**
+- 🌸 [Presentation](https://github.com/Shentxt/NordicBreeze/tree/main#system)
+- 🌸 [Galery](https://github.com/Shentxt/NordicBreeze/tree/main#galery)
+- 🌸 [Download](https://github.com/Shentxt/NordicBreeze/tree/main#download)
+- 🌸 [Informations](https://github.com/Shentxt/NordicBreeze/tree/main#informations)
+
+## 🌿Presentation
 
 Don't you think a system should be visually beautiful but just as fast? Simple yet elegant setup based on the BSPWM graphics system.
 This setup aims for visual elegance and fluidity.
 
 Read carefully: As not everything computers have the same features and kernel. I ask you to clarify any problem that I present in the download or post of this one. This is in order to have feedback and be able to improve.
 
-** 🌿Presentation**
+# 🌿Keys-Map
+
+- **Win+Shift+D:** Open the key display. This key combination can be useful to access various functions in my settings.
+
 
 # 🌿System
 
@@ -76,10 +79,6 @@ Read carefully: As not everything computers have the same features and kernel. I
 
 </details>
 
-## 🌿Keys-Map
-
-- **Win+Shift+D:** Open the key display. This key combination can be useful to access various functions in my settings.
-
 ## 💾Download
 
 <div style="background-color: black; color: white; padding: 10px;">
@@ -96,7 +95,7 @@ Read carefully: As not everything computers have the same features and kernel. I
 </code></pre>
 </div>
 
-** 💾Removed**
+# 💾Removed
 
 <div style="background-color: black; color: white; padding: 10px;">
 <pre><code>
@@ -108,7 +107,7 @@ Read carefully: As not everything computers have the same features and kernel. I
 </code></pre>
 </div>
 
-** 📦Packages**
+# 📦Packages
 
 <div style="background-color: black; color: white; padding: 10px;">
 <pre><code>
@@ -145,21 +144,20 @@ Packages/
 </code></pre>
 </div>
 
-## 🌿Informations
+## 🌿Contact Me
 
 - [Github](https://github.com/Shentxt)
 
-** 🌿Inspirations**
+# 🌿Thanks
 
+- 🌸 [Bing-IA](https://www.bing.com/?setlang=es)
+- 🌸 [Arch](https://archlinux.org/)
 - 🌸 [Unixporn](https://www.reddit.com/r/unixporn/)
+
+# 🌿Based in 
+
 - 🌸 [Cenunix](https://github.com/cenunix)
 - 🌸 [AlphaTecnolog](https://github.com/AlphaTechnolog/dotfiles)
 - 🌸 [Juminai](https://github.com/juminai/dotfiles)
 - 🌸 [Gh0stzk](https://github.com/gh0stzk/dotfiles)
-- 🌸 [Aylur](https://github.com/Aylur/dotfiles)
 - 🌸 [Ryan](https://github.com/hidayry)
-
-** 🌿Thanks**
-
-- 🌸 [Bing-IA](https://www.bing.com/?setlang=es)
-- 🌸 [Arch](https://archlinux.org/)
