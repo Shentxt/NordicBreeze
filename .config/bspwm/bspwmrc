@@ -67,13 +67,10 @@ bspc rule -a scratch sticky=on state=floating focus=on
 
 #|||----- Autostart -----|||#
 
-# Set system vars for polybar
-. SetSysVars
-
 pkill xautolock
 
+0 * * * * ~/.config/bspwm/scripts/brightnes &
 ~/.config/bspwm/scripts/welcome &
-~/.config/bspwm/scripts/brightnes &
 ~/.config/bspwm/scripts/autokill &
 
 xautolock -time 5 -locker "betterlockscreen -l" -killer "systemctl suspend" &
@@ -90,8 +87,7 @@ done
 
 # Launch picom // If you have old hardware or encounter problems
 # uncomment the picom "--legacy-backends" line and comment the current one.
-pidof -q picom || { picom --config "$HOME"/.config/bspwm/picom.conf & }
-#pidof -q picom || { picom --legacy-backends --config "$HOME"/.config/bspwm/picom.conf & }
+pidof -q picom || { picom  --animations -b --config "$HOME"/.config/bspwm/picom.conf & }
 
 # Set random wallpaper for actual rice
 feh -z --no-fehbg --bg-fill ~/.config/bspwm/assets/walls
@@ -116,3 +112,4 @@ pidof -q polkit-gnome-authentication-agent-1 || { /usr/lib/polkit-gnome/polkit-g
 xsetroot -cursor_name left_ptr
 
 copyq &
+plank &

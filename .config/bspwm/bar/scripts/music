@@ -13,7 +13,7 @@ while true; do
         echo "${metadata:$i:20}"
         i=$(( (i + 1) % len ))
     else
-        echo " Not Playing"
+        echo "  Not Playing"
         i=0
     fi
     sleep 0.5

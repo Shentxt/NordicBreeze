@@ -11,20 +11,17 @@
 #
 # ----- Author: Shen - url: https://github.com/Shentxt -----
 
-# Get current brightness
-current_brightness=$(xrandr --current --verbose | grep -m 1 -i brightness | cut -f2 -d ' ')
+# Get the current time
+hour=$(date +%H)
+name=$(whoami)
 
-# Change the brightness with xbacklight or some other tool you prefer
-xbacklight -set 50 >/dev/null 2>&1
+# If it is 6 AM to 9 PM, set the brightness to normal mode
+if [ $hour -ge 6 ] && [ $hour -lt 22 ]; then
+    xrandr --output DisplayPort-0 --brightness 1 --gamma 1:1:1
+    notify-send "Morgana" "It's already daylight get up" -i ~/.config/hypr/assets/icons/morgana/ok.png
 
-# Get the new brightness value after the change
-new_brightness=$(xrandr --current --verbose | grep -m 1 -i brightness | cut -f2 -d ' ')
-
-# Compare brightness values ​​to determine if they changed
-if [[ "$new_brightness" != "$current_brightness" ]]; then
-	if (($(echo "$new_brightness < $current_brightness" | bc -l))); then
-		notify-send "Brightnes Dark"
-	else
-		notify-send "Brightnes Light"
-	fi
+# If it is 10 PM to 5 AM, set the brightness to night mode
+else
+    xrandr --output DisplayPort-0 --brightness .7 --gamma 1:1:0.8
+    notify-send "Morgana" "Go to sleep ${name}!" -i ~/.config/hypr/assets/icons/morgana/a.png
 fi

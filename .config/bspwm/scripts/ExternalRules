@@ -48,13 +48,9 @@ retroarch)
 	eval "$consequences"
 	[ "$state" ] || echo "state=pseudo_tiled follow=on"
 	;;
-leagueclientux.exe)
-	eval "$consequences"
-	[ "$state" ] || echo "state=pseudo_tiled follow=on"
-	;;
 Pavucontrol)
 	eval "$consequences"
-	[ "$state" ] || echo "state=floating center=on"
+	[ "$state" ] || echo "state=floating follow=on rectangle=849x477+0+0 center=on"
 	;;
 Virt-manager)
 	eval "$consequences"
@@ -121,6 +117,6 @@ zenity)
 	;;
 Toolkit)
 	eval "$consequences"
-	[ "$state" ] || echo "state=floating sticky=on"
+	[ "$state" ] || echo "state=floating rectangle=450x400+890+75 sticky=on"
 	;;
 esac

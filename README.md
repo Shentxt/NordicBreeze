@@ -30,16 +30,18 @@ Read carefully: As not everything computers have the same features and kernel. I
 |      WM      |                 [BSPWM](https://github.com/baskerville/bspwm)                  |
 |   Terminal   | [Wezterm](https://github.com/wez/wezterm)-[Alacritty](https://alacritty)       |
 |   Widgets    |            [ElKowars wacky widgets](https://github.com/elkowar/eww)            |
+|   Bar        |            [Polybar](https://github.com/polybar/polybar)                       |
 |    Shell     |                [Starship](https://github.com/starship/starship)                |
 |   Launcher   |                   [Rofi](https://github.com/davatorium/rofi)                   |
-|  Clipboard   |              [Rofi-Greenclip](https://github.com/erebe/greenclip)              |
+|  Clipboard   |              [Copyq](https://github.com/hluk/CopyQ)                            |
 |    Editor    | [Neovim](https://github.com/neovim/neovim)-[Vs](https://code.visualstudio.com/)|
-|  Compositor  |              [Picom](https://github.com/yshui/picom)                           |
+|  Compositor  |              [Picom](https://github.com/FT-Labs/picom)                         |
 | Music/Player | [Amberol](https://apps.gnome.org/es/Amberol/)-ytmusic                          |
 | File Manager |              [Thunar](https://github.com/xfce-mirror/thunar)                   |
 | Notification |              [Dunst](https://github.com/dunst-project/dunst)                   |
 | Theme Brow   |              [Firefox-gx](https://github.com/Godiesc/firefox-gx)               |
 | Lockscreen   | [Betterlocksreen](https://github.com/betterlockscreen/betterlockscreen)        |
+| Sesion UI    |   [Glorius](https://github.com/thecmdrunner/lightdm-glorious-webkit2)          |
 
 # 🌿Galery
 
@@ -90,7 +92,7 @@ Read carefully: As not everything computers have the same features and kernel. I
       ├── cp -r fonts/* /usr/share/fonts
       ├── cp -r icons/* /usr/share/icons
       ├── cp -r slice/* /usr/share/sddm/themes # Only sddm theme 
-      ├── cp -r glorius/* /usr/share/lightdm-webkit/themes/ # "https://github.com/thecmdrunner/lightdm-glorious-webkit2" 
+      ├── cp -r glorius/* /usr/share/lightdm-webkit/themes/ # Only Lighdm 
       └── cp -r .zshrc/* /home/user/
 </code></pre>
 </div>
@@ -139,6 +141,8 @@ Packages/
     ├── Copyq
     ├── yt-dlp
     ├── Xblacklight
+    ├── betterlocksreen 
+    ├── lightdm (Glorious)
     └── themes/
         └── nordic-bluish-accent-theme/
 </code></pre>

@@ -69,6 +69,10 @@ super + ctrl + r
 super + {_,shift + }q
 	bspc node -{c,k}
 
+# power menu
+super + ctrl + q 
+  OpenApps --power
+
 # alternate between the tiled and monocle layout
 super + m
 	bspc desktop -l next
@@ -137,7 +141,7 @@ super + d
 	OpenApps --menu
 
 # Menu Root
-super + ctrl + d 
+super + shift + d 
   OpenApps --root
 
 # Random wallpaper
@@ -150,6 +154,6 @@ super + ctrl + w
 
 # jgmenu
 ~button3
-  xqp 0 $(xdo id -N Bspwm -n root) && jgmenu --csv-file=~/.config/bspwm/scripts/menu.txt --config-file=~/.config/bspwm/jgmenurc
+  xqp 0 $(xdo id -N Bspwm -n root) && jgmenu --csv-file=~/.config/bspwm/jgmenu/menu.txt --config-file=~/.config/bspwm/jgmenu/jgmenurc
 
 # --------------------------------------------------
