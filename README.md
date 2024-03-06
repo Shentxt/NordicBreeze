@@ -49,19 +49,18 @@ Read carefully: As not everything computers have the same features and kernel. I
 <details>
 <summary><b><code>Desktop</code></b></summary>
 
-|Desk|Update|
-|--|--|
-|![demo](/assets/Screen/desk.png "demo")|![demo](/assets/Screen/update.png "demo")|
+|Desk|Update|packer|
+|--|--|--|--|
+|![demo](/assets/Screen/desk.png "demo")|![demo](/assets/Screen/update.png "demo")|![demo](/assets/Screen/pack.png "demo")|
 
 </details>
 
 <details>
 <summary><b><code>Firefox</code></b></summary>
 
-|Home|Lateral-bar|update|packer|
-|--|--|--|--|--|
-|![demo](/assets/Screen/firefox.png "demo")|![demo](/assets/Screen/firebing.png "demo")|![demo](/assets/Screen/update.png "demo")|![demo](/assets/Screen/pack.png "demo")|
-
+|Home|Lateral-bar|
+|--|--|
+|![demo](/assets/Screen/firefox.png "demo")|![demo](/assets/Screen/firebing.png "demo")|
 </details>
 
 <details>
