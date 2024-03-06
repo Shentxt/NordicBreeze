@@ -11,7 +11,6 @@
 
 # Current Theme
 dir="$HOME/.config/rofi/themes"
-theme='power'
 
 # CMDs
 lastlogin="`last $USER | head -n1 | tr -s ' ' | cut -d' ' -f5,6,7`"
@@ -33,7 +32,7 @@ rofi_cmd() {
 	rofi -dmenu \
 		-p " $USER@$host" \
 		-mesg " Last Login: $lastlogin |  Uptime: $uptime" \
-		-theme ${dir}/${theme}.rasi
+		-theme ${dir}/power.rasi
 }
 
 # Confirmation CMD
@@ -46,7 +45,7 @@ confirm_cmd() {
 		-dmenu \
 		-p 'Confirmation' \
 		-mesg 'Are you Sure?' \
-		-theme ${dir}/${theme}.rasi
+		-theme ${dir}/confirm.rasi
 }
 
 # Ask for confirmation

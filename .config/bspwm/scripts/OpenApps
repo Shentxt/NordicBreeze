@@ -29,14 +29,14 @@ case "$1" in
 --root)
 	~/.config/bspwm/scripts/bsproot
 	;;
+--record)
+  ~/.config/bspwm/scripts/Recording
+  ;;
 --shot)
 	~/.config/bspwm/scripts/Screenshot
 	;;
 --note)
 	~/.config/bspwm/scripts/notes
-	;;
---music)
-	youtube-music
 	;;
 --color)
 	~/.config/bspwm/scripts/colorpicker
@@ -53,6 +53,7 @@ case "$1" in
 --terminal)
 	wezterm
 	;;
+# Float Launch
 --floating)
 	alacritty --class FloaTerm,alacritty -o window.dimensions.lines=22 window.dimensions.columns=90
   ;;
@@ -69,8 +70,11 @@ case "$1" in
 	alacritty -e nvim
 	;;
 --music)
-	alacritty --class FloaTerm,FloaTerm -o window.dimensions.lines=18 window.dimensions.columns=67 -e ncmpcpp
+  alacritty --hold --class FloaTerm,FloaTerm -o window.dimensions.lines=22 window.dimensions.columns=90 -e ytmp3	
 	;;
+--send)
+  alacritty --hold --class FloaTerm,FloaTerm -o window.dimensions.lines=22 window.dimensions.columns=90 -e send	
+  ;;
 --fetch)
 	alacritty --hold --class FloaTerm,FloaTerm -o window.dimensions.lines=26 window.dimensions.columns=40 -e ~/.local/bin/sysfetch
 	;;

@@ -1,0 +1,54 @@
+#!/bin/bash
+
+# Ruta al archivo de log
+log_file="/tmp/device_notification.log"
+
+# Almacena los dispositivos para los que ya se han enviado notificaciones
+connected_devices=()
+
+# Función para manejar la conexión de dispositivos USB y Bluetooth
+usb_connect() {
+    device_name=$1
+
+    # Solo envía una notificación si no se ha enviado una para este dispositivo
+    if ! [[ " ${connected_devices[@]} " =~ " ${device_name} " ]]; then
+        notify-send "Dispositivo conectado: $device_name"
+        echo "$(date): Dispositivo conectado: $device_name" >> $log_file
+
+        # Agrega el dispositivo a la lista de dispositivos conectados
+        connected_devices+=("$device_name")
+    fi
+}
+
+# Función para manejar la desconexión de dispositivos USB y Bluetooth
+usb_disconnect() {
+    device_name=$1
+
+    # Solo envía una notificación si el dispositivo estaba en la lista de dispositivos conectados
+    if [[ " ${connected_devices[@]} " =~ " ${device_name} " ]]; then
+        notify-send "Dispositivo desconectado: $device_name"
+        echo "$(date): Dispositivo desconectado: $device_name" >> $log_file
+
+        # Elimina el dispositivo de la lista de dispositivos conectados
+        connected_devices=(${connected_devices[@]/$device_name})
+    fi
+}
+
+# Monitorear udev para la conexión y desconexión de dispositivos USB y Bluetooth
+tty=$(readlink /proc/$$/fd/2)
+udevadm monitor --udev --property < $tty | while read -r line; do
+    read -r -- _ _ event devpath _ <<< "$line"
+    if [[ -z "$devpath" ]]; then
+        continue
+    fi
+    device_properties=$(udevadm info --query=property --name=$devpath)
+    device_name=$(echo "$device_properties" | grep 'ID_MODEL=' | cut -d'=' -f2)
+    device_type=$(echo "$device_properties" | grep 'DEVTYPE=' | cut -d'=' -f2)
+    if [[ $device_type == "usb_device" ]] || [[ $device_type == "bluetooth" ]]; then
+        if [[ $event == add ]]; then
+            usb_connect "$device_name"
+        elif [[ $event == remove ]]; then
+            usb_disconnect "$device_name"
+        fi
+    fi
+done &

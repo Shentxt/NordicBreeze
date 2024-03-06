@@ -1,0 +1,6 @@
+#!/bin/bash
+
+exec xautolock -detectsleep -time 1/12 -locker "i3lock-fancy" \
+  -notify 30 \
+  -notifier "notify-send -u critical -t 10000 -- 'locking screen in 30 seconds'"
+

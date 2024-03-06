@@ -59,11 +59,11 @@ super + ctrl + x
 
 # Reload BSPWM
 super + r
-	bspc wm -r; notify-send "Morgana" "Upgrade complete! Our window manager is purring like a finely-tuned engine." -i ~/.config/hypr/assets/icons/morgana/awesome.png
+	bspc wm -r; notify-send "Iwai" "Upgrade complete! Our window manager is purring like a finely-tuned engine." -i ~/.config/bspwm/assets/icons/persona/iwai.png
 	
 # Reload Keybindings
 super + ctrl + r
-	pkill -USR1 -x sxhkd; notify-send "Morgana" "Update completed! The keys have been updated successfully, time to test them." -i ~/.config/hypr/assets/icons/morgana/awesome.png
+	pkill -USR1 -x sxhkd; notify-send "Takuto" "Update completed! The keys have been updated successfully, time to test them." -i ~/.config/bspwm/assets/icons/persona/takuto.png
 
 # close and kill
 super + {_,shift + }q
@@ -131,6 +131,10 @@ super + e
     ~/.config/bspwm/scripts/opacity
 
 #|||----- Menu -----|||# 
+
+# Screenrecord
+super + ctrl + p 
+  OpenApps --record
 
 # Screenshot
 super + p 

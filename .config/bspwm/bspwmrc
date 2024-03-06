@@ -14,6 +14,7 @@
 #|||----- Load -----|||#
 
 PATH="$HOME/.config/bspwm/scripts:$PATH"
+PATH="$HOME/.config/bspwm/bar/scripts:$PATH"
 
 ## Fix java applications
 export _JAVA_AWT_WM_NONREPARENTING=1
@@ -69,11 +70,17 @@ bspc rule -a scratch sticky=on state=floating focus=on
 
 pkill xautolock
 
-0 * * * * ~/.config/bspwm/scripts/brightnes &
+~/.config/bspwm/scripts/checkconection &
+~/.config/bspwm/scripts/brightnes &
 ~/.config/bspwm/scripts/welcome &
 ~/.config/bspwm/scripts/autokill &
 
-xautolock -time 5 -locker "betterlockscreen -l" -killer "systemctl suspend" &
+#xautolock -time 5 -locker "betterlockscreen -l" -killer "systemctl suspend" &
+#xautolock -time 5 -locker "i3lock-fancy" -killer "systemctl suspend" &
+
+# xautolock -detectsleep -time 1/12 -locker "i3lock-fancy" \
+# -notify 30 \
+# -notifier "notify-send -u critical -t 10000 -- 'locking screen in 30 seconds'"
 
 # Terminate already running polybar, stalonetray, sxhkd and dunst instances
 processes=("eww.*bar" "polybar" "sxhkd" "dunst" "stalonetray")

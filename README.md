@@ -42,6 +42,7 @@ Read carefully: As not everything computers have the same features and kernel. I
 | Theme Brow   |              [Firefox-gx](https://github.com/Godiesc/firefox-gx)               |
 | Lockscreen   | [Betterlocksreen](https://github.com/betterlockscreen/betterlockscreen)        |
 | Sesion UI    |   [Glorius](https://github.com/thecmdrunner/lightdm-glorious-webkit2)          |
+|   Grub       |          [Minecraft](https://github.com/Lxtharia/minegrub-theme)               |
 
 # 🌿Galery
 
@@ -57,9 +58,9 @@ Read carefully: As not everything computers have the same features and kernel. I
 <details>
 <summary><b><code>Firefox</code></b></summary>
 
-|Home|Lateral-bar|
-|--|--|
-|![demo](/assets/Screen/firefox.png "demo")|![demo](/assets/Screen/firebing.png "demo")|
+|Home|Lateral-bar|update|packer|
+|--|--|--|--|--|
+|![demo](/assets/Screen/firefox.png "demo")|![demo](/assets/Screen/firebing.png "demo")|![demo](/assets/Screen/update.png "demo")|![demo](/assets/Screen/pack.png "demo")|
 
 </details>
 
@@ -68,16 +69,26 @@ Read carefully: As not everything computers have the same features and kernel. I
 
 |Launcher|Wall|Power|
 |--|--|--|
-|![demo](/assets/Screen/launch.png "demo")|![demo](/assets/Screen/wall.png "demo")|![demo](/assets/Screen/power.png "demo")|
+|![demo](/assets/Screen/launch.png "demo")|![demo](/assets/Screen/wall.png "demo")|![demo](/assets/Screen/power.png "demo")
+|
+
+</details>
+
+<details>
+<summary><b><code>Popup</code></b></summary>
+
+|Notify|Tray|Clipboard|Music|
+|--|--|--|--|
+|![demo](/assets/Screen/notify.png "demo")|![demo](/assets/Screen/tray.png "demo")|![demo](/assets/Screen/clip.png "demo")|![demo](/assets/Screen/downloadmusic.png "demo")|
 
 </details>
 
 <details>
 <summary><b><code>Extra</code></b></summary>
 
-|Notify|Tray|Clipboard|Music|
-|--|--|--|--|
-|![demo](/assets/Screen/notify.png "demo")|![demo](/assets/Screen/tray.png "demo")|![demo](/assets/Screen/clip.png "demo")|![demo](/assets/Screen/music.png "demo")|
+|iconpack|
+|--|
+|![demo](/assets/Screen/icon.png "demo")|
 
 </details>
 
@@ -143,6 +154,7 @@ Packages/
     ├── Xblacklight
     ├── betterlocksreen 
     ├── lightdm (Glorious)
+    ├── Archcraft
     └── themes/
         └── nordic-bluish-accent-theme/
 </code></pre>
@@ -151,12 +163,14 @@ Packages/
 # 🌿Contact Me
 
 - [Github](https://github.com/Shentxt)
+- [Linkelind](https://www.linkedin.com/in/federico-p-065a42217/)
 
 ## 🌿Thanks
 
 - 🌸 [Bing-IA](https://www.bing.com/?setlang=es)
 - 🌸 [Arch](https://archlinux.org/)
 - 🌸 [Unixporn](https://www.reddit.com/r/unixporn/)
+- 🌸 [Icon](https://www.tumblr.com/jakku-san/620012944745512960/noosey-woosey-noosey-woosey-noosey-woosey)
 
 ## 🌿Based in 
 

@@ -15,7 +15,7 @@ color=$(xcolor --format hex --preview-size 255 --scale 10)
 
 # Check if color is null or empty
 if [[ -z "$color" ]]; then
-	notify-send "Morgana" "Seems like the color selection was canceled or no color was detected. Don't worry, we'll find the perfect color next time!" -i ~/.config/hypr/assets/icons/morgana/critic.png
+	notify-send "Ann" "Seems like the color selection was canceled or no color was detected. Don't worry, we'll find the perfect color next time!" -i ~/.config/bspwm/assets/icons/persona/ann.png
 	exit 1
 fi
 
@@ -27,7 +27,7 @@ main() {
 	# generate preview
 	convert -size 48x48 xc:"$color" ${image}
 	# notify about it
-	dunstify -u low -h string:x-dunst-stack-tag:obcolorpicker -i ${image} "That $color is so elegant"
+	dunstify -u low -h string:x-dunst-stack-tag:obcolorpicker -i ${image} "Ann" "That $color is so elegant"
 }
 
 # run the script

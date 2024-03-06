@@ -44,10 +44,6 @@ whatsapp-nativefier-d40211 | TelegramDesktop)
 	eval "$consequences"
 	[ "$state" ] || echo "state=pseudo_tiled folow=on"
 	;;
-retroarch)
-	eval "$consequences"
-	[ "$state" ] || echo "state=pseudo_tiled follow=on"
-	;;
 Pavucontrol)
 	eval "$consequences"
 	[ "$state" ] || echo "state=floating follow=on rectangle=849x477+0+0 center=on"

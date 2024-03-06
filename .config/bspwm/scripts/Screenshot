@@ -63,14 +63,13 @@ fi
 
 # notify and view screenshot
 notify_view() {
-	notify-send "Morgana" "track saved, we'll see it later... Let's continue!." -i ~/.config/hypr/assets/icons/morgana/normal.png
-	paplay ~/.config/hypr/assets/effects/screenshot.ogg &>/dev/null &
+		paplay ~/.config/hypr/assets/effects/screenshot.ogg &>/dev/null &
 	if [[ -e "${dir}/${file}" ]]; then
 		xclip -selection clipboard -t image/png -i "${dir}/${file}"
 		xclip -selection clipboard -t image/png -o >/tmp/image.png
-		notify-send "Screenshot Saved." -i /tmp/image.png
+		notify-send "Makoto" "Screenshot Saved." -i /tmp/image.png
 	else
-		notify-send "Screenshot Deleted." -i /tmp/image.png
+		notify-send "Makoto" "Screenshot Deleted." -i /tmp/image.png
 	fi
 }
 
@@ -82,7 +81,8 @@ copy_shot() {
 # countdown
 countdown() {
 	for sec in $(seq $1 -1 1); do
-		dunstify -t 1000 -h string:x-dunst-stack-tag:screenshottimer -i ~/.config/hypr/assets/icons/system/clock.png "Taking shot in : $sec"
+		dunstify -t 1000 -h string:x-dunst-stack-tag:screenshottimer -i ~/.config/bspwm/assets/icons/persona/makoto.png "Makoto" "Taking shot in : $sec"
+
 		sleep 1
 	done
 }
