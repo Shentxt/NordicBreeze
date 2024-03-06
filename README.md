@@ -50,7 +50,7 @@ Read carefully: As not everything computers have the same features and kernel. I
 <summary><b><code>Desktop</code></b></summary>
 
 |Desk|Update|packer|
-|--|--|--|--|
+|--|--|--|
 |![demo](/assets/Screen/desk.png "demo")|![demo](/assets/Screen/update.png "demo")|![demo](/assets/Screen/pack.png "demo")|
 
 </details>
