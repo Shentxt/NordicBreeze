@@ -68,17 +68,16 @@ Read carefully: As not everything computers have the same features and kernel. I
 
 |Launcher|Wall|Power|
 |--|--|--|
-|![demo](/assets/Screen/launch.png "demo")|![demo](/assets/Screen/wall.png "demo")|![demo](/assets/Screen/power.png "demo")
-|
+|![demo](/assets/Screen/launch.png "demo")|![demo](/assets/Screen/wall.png "demo")|![demo](/assets/Screen/power.png "demo")|
 
 </details>
 
 <details>
 <summary><b><code>Popup</code></b></summary>
 
-|Notify|Tray|Clipboard|Music|
-|--|--|--|--|
-|![demo](/assets/Screen/notify.png "demo")|![demo](/assets/Screen/tray.png "demo")|![demo](/assets/Screen/clip.png "demo")|![demo](/assets/Screen/downloadmusic.png "demo")|
+|Notify|Tray|Clipboard|dl-Music|Music|
+|--|--|--|--|--|
+|![demo](/assets/Screen/notify.png "demo")|![demo](/assets/Screen/tray.png "demo")|![demo](/assets/Screen/clip.png "demo")|![demo](/assets/Screen/downloadmusic.png "demo")|![demo](/assets/Screen/info.png "demo")|
 
 </details>
 

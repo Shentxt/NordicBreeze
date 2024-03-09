@@ -4,5 +4,5 @@ sleep 1
 
 name=$(whoami)
 
-notify-send "Konomaru" "${name}?,you're back? welcome what will we do today!" -i ~/.config/bspwm/assets/icons/persona/konoharu.png
+notify-send "Konomaru" " <span color='yellow'>${name}</span>?,you're back? welcome what will we do today!" -i ~/.config/bspwm/assets/icons/persona/konoharu.png
 

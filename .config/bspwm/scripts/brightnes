@@ -18,10 +18,10 @@ name=$(whoami)
 # If it is 6 AM to 9 PM, set the brightness to normal mode
 if [ $hour -ge 6 ] && [ $hour -lt 22 ]; then
     xrandr --output DisplayPort-0 --brightness 1 --gamma 1:1:1
-    notify-send "Konoharu" "It's already daylight get up" -i ~/.config/bspwm/assets/icons/persona/konoharu.png
+    notify-send "Konoharu" "It's already <span color='yellow'>Daylight</span>, get up" -i ~/.config/bspwm/assets/icons/persona/konoharu.png
 
 # If it is 10 PM to 5 AM, set the brightness to night mode
 else
     xrandr --output DisplayPort-0 --brightness .7 --gamma 1:1:0.8
-    notify-send "Morgana" "Go to sleep ${name}!" -i ~/.config/bspwm/assets/icons/persona/morgana.png
+    notify-send "Morgana" "It's already <span color='yellow'>Nightlight</span>, Go to sleep ${name}!" -i ~/.config/bspwm/assets/icons/persona/morgana.png
 fi

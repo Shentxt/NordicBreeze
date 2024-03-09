@@ -28,6 +28,30 @@ get_list_aur_updates() {
 
 print_updates() {
     while true; do
+        notify-send "Akihiko" "reading you can improve your <span color='green'>academy</span>." -i ~/.config/bspwm/assets/icons/persona/akihiko.png
+        echo "1. Search file"
+        echo "2. Search pack"
+        echo "3. Exit"
+        read -p "Please enter your choice (1, 2 or 3): " choice
+
+        case "$choice" in
+            1) file ;;
+            2) pack ;;
+            3) echo "Exiting..."; break ;;
+            *) echo "Invalid option." ;;
+        esac
+    done
+}
+
+file() {
+    find . -type f | fzf --preview 'cat {}'
+    if [[ ! -z "$selected_file" ]]; then
+        nvim "$selected_file"
+    fi
+}
+
+pack() {
+    while true; do
         selected=$(paru -Qe | awk '{print $1 " - " $2}' | fzf --multi --preview 'paru -Si {1}')
         
         if [[ ! -z "$selected" ]]; then
@@ -43,6 +67,7 @@ print_updates() {
 }
 
 update_system() {
+    notify-send "Akihiko" "Updating your equipment improves <span color='green'>performance</span>." -i ~/.config/bspwm/assets/icons/persona/akihiko.png
     # Check for broken packages 
     broken_packages=$(paru -Qdtq)
     if [[ ! -z "$broken_packages" ]]; then

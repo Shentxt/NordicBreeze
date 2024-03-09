@@ -17,7 +17,8 @@ if [[ -d "${XDG_MUSIC_DIR:-$HOME/Music}" ]]; then
 elif [[ -d "$HOME/Música" ]]; then
     MUSIC_DIR="$HOME/Música"
 else
-    echo "folder not found"
+     notify-send "Haru" "The necessary <span color='yellow'>files</span> have not been found." -i ~/.config/bspwm/assets/icons/persona/haru.png
+#    echo "folder not found"
     exit 1
 fi
 
@@ -35,9 +36,9 @@ while true; do
         1)
             read -p "Enter the url of YT: " url
             if yt-dlp -x --audio-format mp3 --audio-quality 0 -P "$MUSIC_DIR" -o "%(title)s.%(ext)s" "$url"; then
-                notify-send "Ren" "new soundtrack? amazing it's time to try it." -i ~/.config/bspwm/assets/icons/persona/ren.png
+                notify-send "Ren" "new <span color='yellow'>soundtrack</span>? amazing it's time to try it." -i ~/.config/bspwm/assets/icons/persona/ren.png
             else
-                notify-send "Futaba" "Oops! It seems there was a problem with the URL you entered. Please try again." -i ~/.config/bspwm/assets/icons/persona/futaba.png
+                notify-send "Futaba" "Oops! It seems there was a problem with the <span color='yellow'>Url</span> you entered. Please try again." -i ~/.config/bspwm/assets/icons/persona/futaba.png
             fi
             ;;
         2)

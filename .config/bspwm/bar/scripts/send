@@ -2,7 +2,7 @@
 
 name=$(whoami)
 
-notify-send "Futaba" "${name}, we are ready to send or receive data. Get ready for the transfer!." -i ~/.config/bspwm/assets/icons/persona/futaba.png
+notify-send "Jumpei" "${name}, look what i send you." -i ~/.config/bspwm/assets/icons/persona/jumpei.png
 
 # Function to transfer files or folders
 transfer() {
@@ -22,7 +22,6 @@ receive() {
 
 # Main menu
 while true; do
-    echo "What would you like to do?"
     echo "1. Transfer a file or folder"
     echo "2. Receive a file or folder"
     echo "3. Exit"

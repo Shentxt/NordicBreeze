@@ -48,6 +48,10 @@ Pavucontrol)
 	eval "$consequences"
 	[ "$state" ] || echo "state=floating follow=on rectangle=849x477+0+0 center=on"
 	;;
+Tk)
+	eval "$consequences"
+	[ "$state" ] || echo "state=floating follow=on rectangle=251x244+615+70  sticky=on"
+	;;
 Virt-manager)
 	eval "$consequences"
 	[ "$state" ] || echo "state=floating follow=on center=on"

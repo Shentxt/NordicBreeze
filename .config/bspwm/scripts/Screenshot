@@ -67,9 +67,9 @@ notify_view() {
 	if [[ -e "${dir}/${file}" ]]; then
 		xclip -selection clipboard -t image/png -i "${dir}/${file}"
 		xclip -selection clipboard -t image/png -o >/tmp/image.png
-		notify-send "Makoto" "Screenshot Saved." -i /tmp/image.png
+    notify-send "Makoto" "Screenshot <span color='yellow'>Saved</span>." -i /tmp/image.png
 	else
-		notify-send "Makoto" "Screenshot Deleted." -i /tmp/image.png
+    notify-send "Makoto" "Screenshot <span color='yellow'>Deleted</span>." -i /tmp/image.png
 	fi
 }
 
@@ -81,7 +81,7 @@ copy_shot() {
 # countdown
 countdown() {
 	for sec in $(seq $1 -1 1); do
-		dunstify -t 1000 -h string:x-dunst-stack-tag:screenshottimer -i ~/.config/bspwm/assets/icons/persona/makoto.png "Makoto" "Taking shot in : $sec"
+		dunstify -t 1000 -h string:x-dunst-stack-tag:screenshottimer -i ~/.config/bspwm/assets/icons/persona/makoto.png "Makoto" "Taking shot in:<span color='yellow'>$sec</span>"
 
 		sleep 1
 	done

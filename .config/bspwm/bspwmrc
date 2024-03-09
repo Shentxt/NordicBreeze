@@ -74,13 +74,7 @@ pkill xautolock
 ~/.config/bspwm/scripts/brightnes &
 ~/.config/bspwm/scripts/welcome &
 ~/.config/bspwm/scripts/autokill &
-
-#xautolock -time 5 -locker "betterlockscreen -l" -killer "systemctl suspend" &
-#xautolock -time 5 -locker "i3lock-fancy" -killer "systemctl suspend" &
-
-# xautolock -detectsleep -time 1/12 -locker "i3lock-fancy" \
-# -notify 30 \
-# -notifier "notify-send -u critical -t 10000 -- 'locking screen in 30 seconds'"
+~/.config/bspwm/scripts/xautolock &
 
 # Terminate already running polybar, stalonetray, sxhkd and dunst instances
 processes=("eww.*bar" "polybar" "sxhkd" "dunst" "stalonetray")
