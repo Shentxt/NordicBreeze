@@ -1,0 +1,42 @@
+#!/bin/bash
+
+# Define the path to the eww binary
+EWW="$HOME/.local/bin/eww"
+DASHBOARD="$HOME/.config/bspwm/bar/eww/dashboard"
+BAR="$HOME/.config/bspwm/bar/eww/bar"
+
+# Run eww daemon if not running already
+if [[ ! `pidof eww` ]]; then
+	${EWW} daemon
+	sleep 1
+fi
+
+# Function to open widgets
+run_eww() {
+	${EWW} -c ${DASHBOARD} open dashboard
+}
+
+# Function to open bar
+run_bar() {
+	${EWW} -c ${BAR} --restart open bar
+}
+
+# Files and cmd
+FILE="$HOME/.cache/ewwdashboard.xyz"
+
+# Check the argument passed to the script
+if [[ $1 == "-dash" ]]; then
+	if [[ ! -f "$FILE" ]]; then
+		touch "$FILE"
+		sh ${DASHBOARD}/scripts/quotes update
+		sh ${DASHBOARD}/scripts/getweather --getdata
+		run_eww
+	else
+		${EWW} -c ${DASHBOARD} close-all 
+		rm "$FILE"
+	fi
+elif [[ $1 == "-eww" ]]; then
+	run_bar
+else
+	echo "Invalid argument. Use -eww or -dash."
+fi

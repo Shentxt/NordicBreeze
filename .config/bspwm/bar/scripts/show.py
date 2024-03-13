@@ -18,7 +18,6 @@ def resize_image(image_path, base_width):
 
 def toggle_music():
     global is_playing
-    # Obtén el estado actual de la música
     status = os.popen('playerctl status').read().strip()
     if status == 'Playing':
         os.system('playerctl pause')
@@ -68,11 +67,12 @@ previous_button = tk.Button(frame,
                    text="PREVIOUS", 
                    fg="#c0caf5",
                    bg="#24283b",
-                   activebackground="#cba6f7",
+                   activebackground="#24283b",
                    height=80,  
                    width=80,
                    borderwidth=0,
                    highlightbackground="#24283b",
+                   cursor="hand2",
                    command=previous_song)
 #previous_button.place(x=150, y=400)
 previous_button.pack(side=tk.LEFT)
@@ -82,11 +82,12 @@ music_button = tk.Button(frame,
                    text="PLAY", 
                    fg="#c0caf5",
                    bg="#24283b",
-                   activebackground="#cba6f7",
+                   activebackground="#24283b",
                    height=80,  
                    width=80, 
                    borderwidth=0,
                    highlightbackground="#24283b",
+                   cursor="hand2",
                    command=toggle_music)
 #music_button.place(x=150, y=400)
 music_button.pack(side=tk.LEFT)
@@ -96,10 +97,11 @@ next_button = tk.Button(frame,
                    text="NEXT", 
                    fg="#c0caf5",
                    bg="#24283b",
-                   activebackground="#cba6f7",
+                   activebackground="#24283b",
                    height=80,  
                    width=80,
                    borderwidth=0,
+                   cursor="hand2",
                    highlightbackground="#24283b",
                    command=next_song)
 #next_button.place(x=150, y=400)

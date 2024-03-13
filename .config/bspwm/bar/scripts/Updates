@@ -44,9 +44,9 @@ print_updates() {
 }
 
 file() {
-    find . -type f | fzf --preview 'cat {}'
+    selected_file=$(find . -type f | fzf --preview 'cat {}')
     if [[ ! -z "$selected_file" ]]; then
-        nvim "$selected_file"
+      alacritty -e nvim "$selected_file"
     fi
 }
 

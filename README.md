@@ -84,9 +84,9 @@ Read carefully: As not everything computers have the same features and kernel. I
 <details>
 <summary><b><code>Extra</code></b></summary>
 
-|iconpack|
-|--|
-|![demo](/assets/Screen/icon.png "demo")|
+|iconpack|minegrub|
+|--|--|
+|![demo](/assets/Screen/icon.png "demo")|![demo](/assets/Screen/mine.webp "demo")|
 
 </details>
 
@@ -102,7 +102,9 @@ Read carefully: As not everything computers have the same features and kernel. I
       ├── cp -r icons/* /usr/share/icons
       ├── cp -r slice/* /usr/share/sddm/themes # Only sddm theme 
       ├── cp -r glorius/* /usr/share/lightdm-webkit/themes/ # Only Lighdm 
-      └── cp -r .zshrc/* /home/user/
+      ├── cp -r minegrub/* /boot/grub/themes/
+      ├── cp -r eww/* ~/.local/bin/
+      └── cp -r .zshrc/* ~/
 </code></pre>
 </div>
 
@@ -168,7 +170,8 @@ Packages/
 - 🌸 [Bing-IA](https://www.bing.com/?setlang=es)
 - 🌸 [Arch](https://archlinux.org/)
 - 🌸 [Unixporn](https://www.reddit.com/r/unixporn/)
-- 🌸 [Icon](https://www.tumblr.com/jakku-san/620012944745512960/noosey-woosey-noosey-woosey-noosey-woosey)
+- 🌸 [Persona](https://www.tumblr.com/jakku-san/620012944745512960/noosey-woosey-noosey-woosey-noosey-woosey)
+- 🌸 [Icon](https://iconos8.es/icons)
 
 ## 🌿Based in 
 
