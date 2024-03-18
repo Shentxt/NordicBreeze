@@ -1,40 +1,43 @@
 #!/bin/bash
 
-# Ruta al archivo de log
+# Path to log file
 log_file="/tmp/device_notification.log"
 
-# Almacena los dispositivos para los que ya se han enviado notificaciones
+# Stores devices for which notifications have already been sent
 connected_devices=()
 
-# Función para manejar la conexión de dispositivos USB y Bluetooth
+# Function to manage the connection of USB and Bluetooth devices
 usb_connect() {
     device_name=$1
 
-    # Solo envía una notificación si no se ha enviado una para este dispositivo
+    # Only send a notification if one hasn't been sent for this device
     if ! [[ " ${connected_devices[@]} " =~ " ${device_name} " ]]; then
-        notify-send "Dispositivo conectado: $device_name"
-        echo "$(date): Dispositivo conectado: $device_name" >> $log_file
-
-        # Agrega el dispositivo a la lista de dispositivos conectados
+        notify-send "Futaba" "<span color='yellow'>Connected</span> Device: $device_name"  -i ~/.config/bspwm/assets/icons/persona/futaba.png
+        echo "$(date): Connected Device: $device_name" >> $log_file
+        
+        # Add the device to the list of connected devices
         connected_devices+=("$device_name")
     fi
 }
 
-# Función para manejar la desconexión de dispositivos USB y Bluetooth
+# Function to handle disconnection of USB and Bluetooth devices
 usb_disconnect() {
     device_name=$1
 
-    # Solo envía una notificación si el dispositivo estaba en la lista de dispositivos conectados
+    # Only sends a notification if the device was in the list of connected devices
     if [[ " ${connected_devices[@]} " =~ " ${device_name} " ]]; then
-        notify-send "Dispositivo desconectado: $device_name"
-        echo "$(date): Dispositivo desconectado: $device_name" >> $log_file
+      notify-send "Futaba" "<span color='yellow'>Disconnected</span> device: $device_name"  -i ~/.config/bspwm/assets/icons/persona/futaba.png
+        echo "$(date): Disconnected device: $device_name" >> $log_file
 
-        # Elimina el dispositivo de la lista de dispositivos conectados
+        # Remove the device from the list of connected devices
         connected_devices=(${connected_devices[@]/$device_name})
+
+        # Turn off Bluetooth
+        bluetoothctl power off
     fi
 }
 
-# Monitorear udev para la conexión y desconexión de dispositivos USB y Bluetooth
+# Monitor udev for connection and disconnection of USB and Bluetooth devices
 tty=$(readlink /proc/$$/fd/2)
 udevadm monitor --udev --property < $tty | while read -r line; do
     read -r -- _ _ event devpath _ <<< "$line"

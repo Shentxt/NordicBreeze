@@ -134,6 +134,7 @@ Packages/
     ├── Feh
     ├── Picom
     ├── Firefox
+    ├── Physlock
 ├── Terminal/
 │   ├── Wezterm
     ├── Alacritty

@@ -13,7 +13,7 @@
 
 #|||----- Info -----|||#
 
-WIDGET_DIR="$HOME/.config/bspwm/eww"
+WIDGET_DIR="$HOME/.config/bspwm/bar/eww"
 
 # -----------------------------------------------------------
 
@@ -41,7 +41,10 @@ case "$1" in
 --color)
 	~/.config/bspwm/scripts/colorpicker
 	;;
---user)
+--cli)
+  ~/.config/bspwm/bar/scripts/clip
+  ;;
+--mug)
 	mugshot
 	;;
 --wine)
@@ -69,6 +72,9 @@ case "$1" in
 --nvim)
 	alacritty -e nvim
 	;;
+--wifi)
+  alacritty -e nmtui 
+  ;;
 --music)
   alacritty --hold --class FloaTerm,FloaTerm -o window.dimensions.lines=22 window.dimensions.columns=90 -e ytmp3	
 	;;
@@ -100,6 +106,15 @@ case "$1" in
 --soundcontrol)
 	pavucontrol
 	;;
+--usercard)
+  eww -c "$WIDGET_DIR" open --toggle launchermenu
+  ;;
+--player)
+  eww -c "$WIDGET_DIR" open --toggle music
+  ;;
+--calendar)
+  eww -c "$WIDGET_DIR" open --toggle date
+  ;;
 *)
 	echo "invalid option"
 	;;

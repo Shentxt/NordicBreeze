@@ -44,7 +44,8 @@ print_updates() {
 }
 
 file() {
-    selected_file=$(find . -type f | fzf --preview 'cat {}')
+    sudo -v
+    selected_file=$(sudo find / -type f ! -path "/root/*" ! -path "/proc/*" ! -path "/sys/*" ! -path "/dev/*" ! -path "/tmp/*" ! -path "/mnt/*" ! -path "/media/*" | fzf --preview 'cat {}')
     if [[ ! -z "$selected_file" ]]; then
       alacritty -e nvim "$selected_file"
     fi

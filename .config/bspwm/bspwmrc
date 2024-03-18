@@ -15,6 +15,7 @@
 
 PATH="$HOME/.config/bspwm/scripts:$PATH"
 PATH="$HOME/.config/bspwm/bar/scripts:$PATH"
+export XDG_CURRENT_DESKTOP='bspwm'
 
 ## Fix java applications
 export _JAVA_AWT_WM_NONREPARENTING=1
@@ -38,6 +39,10 @@ bspc config single_monocle true
 bspc config borderless_monocle false
 bspc config gapless_monocle false
 
+bspc config left_padding 76
+bspc config right_padding 2
+bspc config bottom_padding 2
+bspc config top_padding 2
 bspc config focus_follows_pointer true
 bspc config pointer_follows_focus false
 bspc config pointer_motion_interval 5
@@ -68,13 +73,16 @@ bspc rule -a scratch sticky=on state=floating focus=on
 
 #|||----- Autostart -----|||#
 
+# Set system vars for polybar
+. SetSysVars
+
 pkill xautolock
 
-~/.config/bspwm/scripts/checkconection &
-~/.config/bspwm/scripts/brightnes &
-~/.config/bspwm/scripts/welcome &
-~/.config/bspwm/scripts/autokill &
-~/.config/bspwm/scripts/xautolock &
+# System Scripts
+source ~/.config/bspwm/scripts/checkconection &
+source ~/.config/bspwm/scripts/brightnes &
+source ~/.config/bspwm/scripts/welcome &
+source ~/.config/bspwm/scripts/xautolock &
 
 # Terminate already running polybar, stalonetray, sxhkd and dunst instances
 processes=("eww.*bar" "polybar" "sxhkd" "dunst" "stalonetray")
@@ -93,9 +101,6 @@ pidof -q picom || { picom  --animations -b --config "$HOME"/.config/bspwm/picom.
 # Set random wallpaper for actual rice
 feh -z --no-fehbg --bg-fill ~/.config/bspwm/assets/walls
 
-# Launch eww daemon
-polybar -q ryan-bar -c "$HOME"/.config/bspwm/bar/config.ini & 
-
 # Reload sxhkd daemon
 sxhkd -c "$HOME"/.config/bspwm/sxhkdrc &
 
@@ -103,8 +108,8 @@ sxhkd -c "$HOME"/.config/bspwm/sxhkdrc &
 dunst -config "$HOME"/.config/bspwm/dunstrc &
 
 # Launch stalonetray
-stalonetray -c "$HOME"/.config/bspwm/stalonetrayrc &
-sleep 0.1 && xdo hide -N stalonetray && touch "/tmp/syshide.lock"
+#stalonetray -c "$HOME"/.config/bspwm/stalonetrayrc &
+#sleep 0.1 && xdo hide -N stalonetray && touch "/tmp/syshide.lock"
 
 # Launch polkit
 pidof -q polkit-gnome-authentication-agent-1 || { /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & }
@@ -112,5 +117,9 @@ pidof -q polkit-gnome-authentication-agent-1 || { /usr/lib/polkit-gnome/polkit-g
 # Fix cursor
 xsetroot -cursor_name left_ptr
 
+# Applications
 copyq &
 plank &
+
+# eww
+. ~/.config/bspwm/bar/init &

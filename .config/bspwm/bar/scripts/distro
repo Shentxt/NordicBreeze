@@ -2,20 +2,20 @@
 
 # Define the icons for each distribution.
 iconos=(
-  ["ubuntu"]=" "
-  ["debian"]=" "
-  ["fedora"]=" "
+  ["ubuntu"]=""
+  ["debian"]=""
+  ["fedora"]=""
   ["nix"]="󱄅 "
-  ["manjaro"]=" "
-  ["mx_linux"]=" "
+  ["manjaro"]=""
+  ["mx_linux"]=""
   ["mint"]="󰣭 "
   ["deepin"]=" "
   ["zorin_os"]=" "
-  ["centOs"]=" "
-  ["redhat"]=" "
-  ["opensuse"]=" "
+  ["centOs"]=""
+  ["redhat"]=""
+  ["opensuse"]=""
   ["arch"]="󰣇 "
-  ["archcraft"]=" "
+  ["archcraft"]=""
 )
 
 # Get the distribution name

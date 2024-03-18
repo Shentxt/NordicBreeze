@@ -2,36 +2,42 @@
 
 # A script to toggle between various desktop layouts for bspwm, intended to be used for my polybar module.
 
-CURRENT=$(cat $HOME/.config/bspwm/bar/scripts/current-layout)
+# Get the current layout
+CURRENT=$(bsp-layout get)
 
 # Switch layouts
 
 # Tiled
-if [[ $CURRENT == "󰍲" ]]; then
-        bsp-layout set tiled
-        echo "󰙀" > $HOME/.config/bspwm/bar/scripts/current-layout
+if [[ $CURRENT == "tiled" ]]; then
+        bsp-layout set monocle
+        echo "󰨤"
+        exit
 fi
 
 # Monocle
-if [[ $CURRENT == "󰙀" ]]; then
-        bsp-layout set monocle
-        echo "󰨤" > $HOME/.config/bspwm/bar/scripts/current-layout
+if [[ $CURRENT == "monocle" ]]; then
+        bsp-layout set tall
+        echo "󰕮"
+        exit
 fi
 
 # Grid
-if [[ $CURRENT == "󰨤" ]]; then
-        bsp-layout set tall
-        echo "󰕮" > $HOME/.config/bspwm/bar/scripts/current-layout
+if [[ $CURRENT == "tall" ]]; then
+        bsp-layout set wide
+        echo "󰕪"
+        exit
 fi
 
 # Wide
-if [[ $CURRENT == "󰕮" ]]; then
-        bsp-layout set wide
-        echo "󰕪" > $HOME/.config/bspwm/bar/scripts/current-layout
+if [[ $CURRENT == "wide" ]]; then
+        bsp-layout set even
+        echo "󰍲"
+        exit
 fi
 
 # Even
-if [[ $CURRENT == "󰕪" ]]; then
-        bsp-layout set even
-        echo "󰍲" > $HOME/.config/bspwm/bar/scripts/current-layout
+if [[ $CURRENT == "even" ]]; then
+        bsp-layout set tiled
+        echo "󰙀"
+        exit
 fi

@@ -105,7 +105,7 @@ feh)
 	;;
 copyq)
 	eval "$consequences"
-	[ "$state" ] || echo "state=floating follow=on rectangle=450x400+890+75" 
+	[ "$state" ] || echo "state=floating follow=on rectangle=350x300+75+425" 
 	;;
 Youtube_Music)
   eval "$consequences"

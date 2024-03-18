@@ -9,120 +9,120 @@ fi
 
 case $window_class in
     *firefox*)
-        echo " "  
+        echo ""  
         ;;
     *org.wezfurlong.wezterm*)
-        echo " "  
+        echo ""  
         ;;
     *Thunar*)
-        echo " "  
+        echo ""  
         ;;
     *copyq*)
-        echo "󱓥 "  
+        echo "󱓥"  
         ;;
     *stalonetray*)
-        echo "󱊖 "  
+        echo "󱊖"  
         ;;
     *blueberry.py*)
-        echo " "  
+        echo ""  
         ;;
     *pavucontrol*)
-        echo "󱡫 "  
+        echo "󱡫"  
         ;;
     *YouTube*)
-        echo "󰗃 "  
+        echo "󰗃"  
         ;;
     *code-oss*)
-        echo "󰨞 "  
+        echo "󰨞"  
         ;;
     *Wezterm*)
-        echo " "  
+        echo ""  
         ;;
     *alacritty*)
-        echo " "  
+        echo ""  
         ;;
     *Alacritty*)
-        echo " "  
+        echo ""  
         ;;
     *gimp-2.10*)
-        echo "󱋆 "  
+        echo "󱋆"  
         ;;
     *Mugshot*)
-        echo "󰚼 "  
+        echo "󰚼"  
         ;;
     *xfce4-about*)
-        echo "󱋅 "  
+        echo "󱋅"  
         ;;
     *audacity*)
-        echo " "  
+        echo ""  
         ;;
     *qt5ct*)
-        echo " "  
+        echo ""  
         ;;
     *cmake-gui*)
-        echo " "  
+        echo ""  
         ;;
     *amberol*)
-        echo "󱍙 "  
+        echo "󱍙"  
         ;;
     *ark*)
-        echo " "  
+        echo ""  
         ;;
     *BleachBit*)
-        echo " "  
+        echo ""  
         ;;
     *clamtk*)
-        echo " "  
+        echo ""  
         ;;
     *nm-connection-editor*)
-        echo "󰤤 "  
+        echo "󰤤"  
         ;;
     *avahi-discover*)
-        echo "󰤤 "  
+        echo "󰤤"  
         ;;
     *corectrl*)
-        echo " "  
+        echo ""  
         ;;
     *soffice*)
-        echo "󰏆 "  
+        echo "󰏆"  
         ;;
     *libreoffice*)
-        echo " "  
+        echo ""  
         ;;
     *atril*)
-        echo "󱔘 "  
+        echo "󱔘"  
         ;;
     *lxappearance*)
-        echo "󱕷 "  
+        echo "󱕷"  
         ;;
     *kvantummanager*)
-        echo "󱕷 "  
+        echo "󱕷"  
         ;;
     *steam*)
-        echo "󰓓 "  
+        echo "󰓓"  
         ;;
     *zenity*)
-        echo "󰓓 "  
+        echo "󰓓"  
         ;;
     *retroarch*)
-        echo "󰺵 "  
+        echo "󰺵"  
         ;;
     *heroic*)
-        echo "󰡶 "  
+        echo "󰡶"  
         ;;
     *geany*)
-        echo " "  
+        echo ""  
         ;;
      *Godot*)
-        echo " "  
+        echo ""  
         ;;
      *gpartedbin*)
-        echo "󱊞 "  
+        echo "󱊞"  
         ;;
      *electron*)
-        echo "󱀤 "  
+        echo "󱀤"  
         ;;
       *)
-        echo "󰋜 "  
+        echo "󰋜"  
         ;;
      esac

@@ -22,8 +22,6 @@
 # wiki: https://wiki.archcraft.io/docs/window-managers/bspwm
 # 
 # ---------------------------------------------------------
-
-# ---------------------------------------------------------
 #                  No coment 
 #
 # read the first line to know that, and if you want,
@@ -55,6 +53,10 @@ super + x
 super + ctrl + x
 	OpenApps --color
 
+# Toggle eww dashboard
+super + alt + d
+  OpenApps --dash 
+
 #|||----- BSPWM -----|||#
 
 # Reload BSPWM
@@ -78,8 +80,12 @@ super + m
 	bspc desktop -l next
 
 # Hide/Unhide Window
-super + h
+super + ctrl + h
 	BspHideNode
+
+# Hide/Unhide Bar
+super + h
+	HideBar {-u} 
 
 # rotate desktop
 super + c

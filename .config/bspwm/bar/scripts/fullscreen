@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# by github : https://github.com/hidayry/dotfiles-bspwm
+
+current_state=$(xprop -id $(bspc query -N -n focused) | grep _NET_WM_STATE_FULLSCREEN)
+
+if [ -z "$current_state" ]; then
+    bspc node -f focused.tiled
+    bspc node -t fullscreen
+else
+    bspc node -f focused.fullscreen
+    bspc node -t tiled
+fi

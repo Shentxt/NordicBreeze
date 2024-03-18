@@ -1,19 +1,29 @@
 #!/bin/bash
 
+function update_tray_status {
+    if pgrep stalonetray &>/dev/null; then
+        echo " "
+    else
+        echo " "
+    fi
+}
+
 if [[ $1 == "--toggle" ]]; then
-        if pgrep stalonetray &>/dev/null; then
-                pkill stalonetray
-                echo "󰁢" > $HOME/.config/bspwm/bar/scripts/tray-status
-                exit 1
-        else
-                stalonetray -c "$HOME"/.config/bspwm/stalonetrayrc &
-                echo "󰁊" > $HOME/.config/bspwm/bar/scripts/tray-status
-        fi
-        exit
+    if pgrep stalonetray &>/dev/null; then
+        pkill stalonetray
+    else
+        stalonetray -c "$HOME"/.config/bspwm/stalonetrayrc &
+    fi
+    exit
 fi
 
 if [[ $1 == "--kill" ]]; then
-        pkill stalonetray
-        echo "󰁢" > $HOME/.config/bspwm/bar/scripts/tray-status
-        exit 1
-fi 
+    pkill stalonetray
+    exit 1
+fi
+
+if [[ $1 == "--status" ]]; then
+    update_tray_status
+    exit
+fi
+
