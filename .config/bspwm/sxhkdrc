@@ -39,7 +39,7 @@ super + ctrl + d
 
 # Open Terminal (wezterm)
 super + Return
-	OpenApps --terminal
+  OpenApps --terminal
 
 # Open floating Terminal (alacritty)
 super + ctrl + Return
@@ -164,6 +164,6 @@ super + ctrl + w
 
 # jgmenu
 ~button3
-  xqp 0 $(xdo id -N Bspwm -n root) && jgmenu --csv-file=~/.config/bspwm/jgmenu/menu.txt --config-file=~/.config/bspwm/jgmenu/jgmenurc
+ OpenApps --jgmenu
 
 # --------------------------------------------------

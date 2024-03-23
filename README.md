@@ -43,6 +43,8 @@ Read carefully: As not everything computers have the same features and kernel. I
 | Lockscreen   | [Betterlocksreen](https://github.com/betterlockscreen/betterlockscreen)        |
 | Sesion UI    |   [Glorius](https://github.com/thecmdrunner/lightdm-glorious-webkit2)          |
 |   Grub       |          [Minecraft](https://github.com/Lxtharia/minegrub-theme)               |
+| statepage    |          [Tartarus](https://alljavi.github.io/tartarus-startpage/)             |
+      
 
 # 🌿Galery
 

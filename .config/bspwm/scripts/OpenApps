@@ -23,6 +23,9 @@ case "$1" in
 --menu)
 	rofi -show drun -theme $HOME/.config/rofi/themes/default.rasi
 	;;
+--jgmenu)
+  xqp 0 $(xdo id -N Bspwm -n root) && jgmenu --csv-file=~/.config/bspwm/jgmenu/menu.txt --config-file=~/.config/bspwm/jgmenu/jgmenurc
+  ;;
 --power)
   ~/.config/bspwm/bar/scripts/powermenu
   ;;
@@ -67,9 +70,9 @@ case "$1" in
 	alacritty --hold --class Updating,Updating -o window.dimensions.lines=22 window.dimensions.columns=47 -e Updates --print-updates
 	;;
 --ranger)
-	alacritty --class FloaTerm,FloaTerm -o window.dimensions.lines=14 window.dimensions.columns=90 -e ranger
-	;;
---nvim)
+  alacritty -e ranger
+  ;;
+--editor)
 	alacritty -e nvim
 	;;
 --wifi)

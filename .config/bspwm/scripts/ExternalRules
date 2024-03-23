@@ -60,6 +60,14 @@ Thunar)
 	eval "$consequences"
 	[ "$state" ] || echo "state=floating follow=on rectangle=849x477+0+0 center=on"
 	;;
+sddm-config-editor)
+	eval "$consequences"
+	[ "$state" ] || echo "state=floating follow=on rectangle=849x477+0+0 center=on"
+	;;
+Yad)
+	eval "$consequences"
+	[ "$state" ] || echo "state=floating follow=on rectangle=849x477+0+0 center=on"
+	;;
 Transmission-gtk)
 	eval "$consequences"
 	[ "$state" ] || echo "follow=on"
@@ -92,6 +100,10 @@ blueman-manager)
 	[ "$state" ] || echo "state=floating follow=on rectangle=849x477+0+0  center=on"
 	;;
 blueberry.py)
+	eval "$consequences"
+	[ "$state" ] || echo "state=floating follow=on rectangle=849x477+0+0 center=on"
+	;;
+file-roller)
 	eval "$consequences"
 	[ "$state" ] || echo "state=floating follow=on rectangle=849x477+0+0 center=on"
 	;;

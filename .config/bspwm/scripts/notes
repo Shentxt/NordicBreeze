@@ -14,7 +14,7 @@
 # default values
 AUTHOR=$(whoami)
 NOTES_FOLDER="$HOME/.notes"
-NOTES_EDITOR='wezterm -e nvim '
+NOTES_EDITOR='alacritty -e nvim '
 
 theme=~/.config/rofi/themes/default.rasi
 

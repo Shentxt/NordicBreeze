@@ -12,4 +12,4 @@ function unlock {
 }
 
 # Run xautolock with the custom script
-exec xautolock -time 5 -locker lock -notify 30 
+exec xautolock -time 2 -locker lock -notify 30 
