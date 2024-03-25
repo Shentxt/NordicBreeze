@@ -1,8 +1,0 @@
-[Desktop Entry]
-Encoding=UTF-8
-Version=1.0
-Type=Application
-NoDisplay=true
-Exec=alacritty -e nvim %f
-Name=alacritty -e nvim
-Comment=Definición personalizada para alacritty -e nvim
