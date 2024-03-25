@@ -95,17 +95,19 @@ Read carefully: As not everything computers have the same features and kernel. I
 
 # 💾Download
 
-soon I will have an automatic installer/ 
+soon I will have an automatic installer
+
+git/
  └── cd NordicBreeze/
-      ├── cp -r config/* ~/.config/
-      ├── cp -r firefox/* ~/.mozilla/firefox # More informations "about:support" only firefox
-      ├── cp -r fonts/* /usr/share/fonts
-      ├── cp -r icons/* /usr/share/icons
-      ├── cp -r slice/* /usr/share/sddm/themes # Only sddm theme 
-      ├── cp -r glorius/* /usr/share/lightdm-webkit/themes/ # Only Lighdm 
-      ├── cp -r minegrub/* /boot/grub/themes/
-      ├── cp -r eww/* ~/.local/bin/
-      └── cp -r .zshrc/* ~/
+      ├── cp -r config  ~/.
+      ├── cp -r firefox ~/.mozilla/firefox # More informations "about:support" only firefox
+      ├── cp -r fonts /usr/share
+      ├── cp -r icons /usr/share
+      ├── cp -r slice /usr/share/sddm/themes # Only sddm theme 
+      ├── cp -r glorius /usr/share/lightdm-webkit/themes/ # Only Lighdm 
+      ├── cp -r minegrub /boot/grub/themes/
+      ├── cp -r eww ~/.local/bin/
+      └── cp -r .zshrc ~/
 
 ## 💾Removed
 
