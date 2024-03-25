@@ -25,7 +25,7 @@ configuration {
 window {
     enabled:                     true;
     fullscreen:                  false;
-    width:                       90%;
+    width:                       82%;
     transparency:                "real";
     cursor:                      "default";
     spacing:                     0px;

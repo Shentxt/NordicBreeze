@@ -55,7 +55,7 @@ super + ctrl + x
 
 # Toggle eww dashboard
 super + alt + d
-  OpenApps --dash 
+  OpenApps --windows
 
 #|||----- BSPWM -----|||#
 

@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+launch_bars() {
+    eww -c ~/.config/bspwm/bar open --toggle bar
+}
+
+### ---------- Apply Configurations ---------- ###
+
+launch_bars

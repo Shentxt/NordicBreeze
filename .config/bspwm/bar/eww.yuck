@@ -10,6 +10,9 @@
 ;; Workspaces
 (deflisten workspaces "./scripts/WorkSpaces")
 
+;; Image User
+(defvar IMAGEP "/home/shen/.face")
+
 ;; Volume vars
 (defvar volum false)
 (defpoll volume_icon :interval "1s" "scripts/Volume --icon")
@@ -22,39 +25,34 @@
 ;; Updates vars
 (defpoll UPDATES :interval "2m" `Updates --get-updates`)
 (defvar pac false)
-
-;; Script Icon
-(defpoll launcher :interval "1s" :initial "initial-value" :run-while launcher-visible `~/.config/bspwm/bar/scripts/distro`)
-(defpoll windows :interval "1s" :initial "initial-value" :run-while windows-visible `~/.config/bspwm/bar/scripts/windows`) 
-(defpoll tray :interval "1s" :initial "initial-value" :run-while tray-visible `~/.config/bspwm/bar/scripts/tray --status`)
-
-;; power 
-(defvar power false)
-
-;; Notify and window
 (defvar notify false)
-(defvar window false)
 
-;; date 
+;; Windows
+(defvar wincenter false)
+(defpoll windows :interval "1s" :initial "initial-value" :run-while windows-visible `~/.config/bspwm/bar/scripts/windows`) 
+
+;; time
 (defpoll  hour :interval "1s" `date "+%H"`)
 (defpoll  minutes :interval "1s" `date "+%M"`)
 (defpoll  seconds :interval "1s" `date "+%S"`)
+
+;; Script Icon
+;;(defpoll launcher :interval "1s" :initial "initial-value" :run-while launcher-visible `~/.config/bspwm/bar/scripts/distro`)
+(defpoll tray :interval "1s" :initial "initial-value" :run-while tray-visible `~/.config/bspwm/bar/scripts/tray --status`)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;							Widget Section's							 ;;	
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Launcher Widgets
+;; Launcher Widgets ;;
 (defwidget launcher []
-  (box :orientation "v" 
+	(box :orientation "v" 
 		 :space-evenly "false" 
-		 :spacing -15
- (eventbox :cursor "pointer"
-  (button :class "launcher_icon"
-        :tooltip "Menu"
+	(eventbox :cursor "pointer"
+  	(button :style "background-image: url('${IMAGEP}')"
+        :class "launcher_icon" 
 		   	:onclick "OpenApps --menu"
-		   	:onrightclick "OpenApps --root" 
-        (label :text launcher)))))
+		   	:onrightclick "OpenApps --root" ))))
 
 ;; Windows Widgets
 (defwidget windows []
@@ -88,27 +86,33 @@
 				:tooltip "${NETSTAT}")))
 
 ;; window center ;;
-(defwidget bsp []
-	(eventbox	:onhover "${EWW_CMD} update window=true"	
-				:onhoverlost "${EWW_CMD} update window=false"
+(defwidget wincenter []
+	(eventbox	:onhover "${EWW_CMD} update wincenter=true"	
+				:onhoverlost "${EWW_CMD} update wincenter=false"
 				:cursor "pointer"
 	(box		:orientation "v"					
 				:space-evenly "false" 	 
 				:vexpand "false" 	
 				
 	(revealer	:transition "slideup"				
-				:reveal window			 
-				:duration "550ms" 
+				:reveal wincenter			 
+				:duration "550ms"
 	(box		:orientation "v"					
 				:space-evenly "false"
 
-  	(eventbox :cursor "pointer"			
+(eventbox :cursor "pointer"			
+	(button		:style "background-image: url('images/tran.png');"
+				:class "trayicon" 									
+				:tooltip "Transparent"		 
+				:onclick "~/.config/bspwm/scripts/opacity"))
+
+	(eventbox :cursor "pointer"			
 	(button		:style "background-image: url('images/full.png');"
 				:class "trayicon" 									
 				:tooltip "Fullscreen"		 
 				:onclick "~/.config/bspwm/bar/scripts/fullscreen"))
-
-  (eventbox :cursor "pointer"
+	
+	(eventbox :cursor "pointer"
 	(button		:style "background-image: url('images/float.png');"
 				:class "trayicon" 									
 				:tooltip "Float"		 
@@ -119,13 +123,13 @@
 				:class "trayicon" 									
 				:tooltip "Hide"		 
 				:onclick "~/.config/bspwm/scripts/BspHideNode"))))
-
-;; Currently not working
+ 
+  ;; Currently not working
 	(button		:style "background-image: url('images/windows.png');"
 				:class "trayicon" 									
-				:tooltip "bsp"
-        :onclick "~/.config/bspwm/scripts/switch-layouts"
-       (label :text (exec "cat ~/.config/bspwm/bar/scripts/current-layout"))))))
+		    :tooltip "windo/wall"
+        :onrightclick "WallSelect"
+        :onclick "OpenApps --windows"))))
 
 ;; control center ;;
 (defwidget notifycenter []
@@ -142,34 +146,34 @@
 	(box		:orientation "v"					
 				:space-evenly "false"
 
-  	(eventbox :cursor "pointer"			
+	(eventbox :cursor "pointer"			
+	(button		:style "background-image: url('images/tray.png');"
+				:class "trayicon" 									
+				:tooltip "Tray"		 
+				:onclick "~/.config/bspwm/bar/scripts/tray --toggle"))
+
+	(eventbox :cursor "pointer"			
 	(button		:style "background-image: url('images/cli.png');"
 				:class "trayicon" 									
 				:tooltip "Clipboard"		 
 				:onclick "OpenApps --cli"))
-				
-	(eventbox :cursor "pointer"			
-	(button		:style "background-image: url('images/qr.png');"
-				:class "trayicon" 									
-				:tooltip "Fileas and Directory"		 
-				:onclick "OpenApps --send"))
 	
 	(eventbox :cursor "pointer"
 	(button		:style "background-image: url('images/music_player.png');"
 				:class "trayicon" 									
-				:tooltip "Download Music"		 
+				:tooltip "Music Player"		 
 				:onclick "OpenApps --music"))
 				
 	(eventbox :cursor "pointer"			
-	(button		:style "background-image: url('/home/shen/.face');"
+	(button		:style "background-image: url('images/qr.png');"
 				:class "trayicon" 									
-				:tooltip "Config user"		 
-				:onclick "OpenApps --mug"))))
+				:tooltip "Send & Receive"		 
+				:onclick "OpenApps --send"))))
 
 	(button		:style "background-image: url('images/widget_apps.png');"
 				:class "trayicon" 									
-				:tooltip "Info user"
-          :onclick "OpenApps --usercard"))))
+				:tooltip "Info User"
+        :onclick "OpenApps --usercard"))))
 
 ;; Pacman Widgets ;;
 (defwidget pacman []
@@ -228,9 +232,7 @@
       (box
         :orientation "v"
         (label :class "hour" :text hour)
-        (label :orientation "v" :text "⋅⋅")
         (label :class "minutes" :text minutes)
-        (label :orientation "v" :text "⋅⋅")
         (label :class "seconds" :text seconds)))))
 
 ;; Powermenu Widgets ;;
@@ -244,7 +246,7 @@
         :onclick "~/.config/bspwm/bar/scripts/powermenu &"  
 				:tooltip "Power Menu")))
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;							Positions Section's							 ;;	
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -252,24 +254,15 @@
 (defwidget top []
 	(box	:orientation "v" 
 			:space-evenly "false" 
-			:valign "start"
+			:valign "start" 
 (launcher)
 (workspaces)))
-
-;; Middle Widget ;;
-(defwidget middle []
-  (box
-    :orientation "v"
-    :space-evenly "false"
-    :valign "center"      
-    (windows)
-    (time)
-    (tray)))
 
 ;; Bottom Widgets ;;
 (defwidget bottom []
 	(box	:orientation "v" 
 			:space-evenly "false"
+(time)
 (power)))
 
 ;; Control Panel Widgets ;;	
@@ -278,7 +271,7 @@
 		 :space-evenly false  
 		 :class "control"
 (notifycenter)
-(bsp)
+(wincenter)
 (volum)
 (wifi)
 (pacman)))
@@ -299,7 +292,6 @@
 		 :vexpand "false" 
 		 :hexpand "false"
 (top)
-(middle)
 (end)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -310,8 +302,8 @@
 	:geometry (geometry :x "15px"
 						:y "0%"
 						:anchor "left center"
-						:height "45px"
-						:width "47px")
+						:height "95%"
+						:width "50px")
 						
 	:reserve (struts :distance "5px"
 					 :side "left")

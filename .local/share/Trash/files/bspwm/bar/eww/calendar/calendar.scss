@@ -1,0 +1,57 @@
+.date {
+  background-color: $bg;
+  color: $fg;
+  border: 3px solid black;
+  border-radius: 12px;
+  border-color: $magenta;
+}
+
+.cal-box {
+  font-family: minecraft;
+  font-weight: Bold;
+  font-size: 0.9rem;
+  background-color: $bg;
+  padding: 0 1rem 0.2rem;
+  color: $fg;
+  background-color: $bg-alt;
+  margin: 0.6rem 0.6rem 0.6rem 0.6rem;
+  border: solid 0px transparent;
+
+  .cal {
+    background-color: inherit;
+    padding: 0.5rem 0.15rem 0.2rem;
+    margin-left: 10px;
+    border-radius: 12px;
+
+     &>* {
+    border: solid 0px transparent;
+  }
+   
+    &.highlight {
+    padding: 10rem;
+    border-radius: 12px;
+    }
+  }
+}
+
+calendar:selected {
+  color: $magenta;
+}
+
+calendar.header {
+  color: $magenta;
+  font-weight: bold;
+}
+
+calendar.button {
+  color: $fg;
+}
+
+calendar.highlight {
+  color: $green;
+  font-weight: bold;
+}
+
+calendar:indeterminate {
+  color: $bg;
+}

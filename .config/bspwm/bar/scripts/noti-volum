@@ -12,23 +12,9 @@
 #	23.09.2023 09:30:24
 #
 
-# Icons
-vol_dir="$HOME/.config/bspwm/assets"
-notify_cmd='dunstify -u low -h string:x-dunst-stack-tag:cvolum'
-
 # Get Volume
 get_volume() {
     pamixer --get-volume-human | sed 's/%//'
-}
-
-# Get icons
-get_icon() {
-    current="$(get_volume)"
-    if [[ "$current" -eq "0" || "$current" == "muted" ]]; then
-        icon="$vol_dir/mute.png"
-    else
-        icon="$vol_dir/vol.png"
-    fi
 }
 
 # Notify
@@ -48,12 +34,13 @@ toggle_mute() {
         pamixer --toggle-mute
         get_icon
         message="Mute"
-    else
+   notify-send "Fuuka" "<span color='yellow'>${message}</span>,There is no signal in this area" -i ~/.config/bspwm/assets/icons/persona/fuuka.png
+  else
         pamixer --toggle-mute
         get_icon
         message="Unmute"
+ notify-send "Fuuka" "<span color='yellow'>${message}</span>,This area is suitable for transmission" -i ~/.config/bspwm/assets/icons/persona/fuuka.png
     fi
-    ${notify_cmd} -i "$icon" "$message"
 }
 
 # Execute accordingly

@@ -2,7 +2,7 @@
 
 name=$(whoami)
 
-notify-send "Jumpei" "${name}, look what i send you." -i ~/.config/bspwm/assets/icons/persona/jumpei.png
+notify-send "Jumpei" "${name}, look what i <span color='yellow'>send</span> you." -i ~/.config/bspwm/assets/icons/persona/jumpei.png
 
 # Function to transfer files or folders
 transfer() {

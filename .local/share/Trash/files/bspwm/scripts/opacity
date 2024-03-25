@@ -1,0 +1,23 @@
+#!/bin/bash
+
+# Path to the file that saves the opacity state
+state_file="/tmp/opacity_state"
+
+# Read the current opacity status
+if [ -f "$state_file" ]; then
+	state=$(cat "$state_file")
+else
+	state="opaque"
+fi
+
+# Get the ID of the active window
+active_win_id=$(xdotool getactivewindow)
+
+# Toggle opacity
+if [ "$state" = "opaque" ]; then
+	xprop -id $active_win_id -f _NET_WM_WINDOW_OPACITY 32c -set _NET_WM_WINDOW_OPACITY $((0xffffffff * 65 / 100))
+	echo "transparent" >"$state_file"
+else
+	xprop -id $active_win_id -f _NET_WM_WINDOW_OPACITY 32c -set _NET_WM_WINDOW_OPACITY 0xffffffff
+	echo "opaque" >"$state_file"
+fi

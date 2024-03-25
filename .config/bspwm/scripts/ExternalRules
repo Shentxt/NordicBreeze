@@ -117,11 +117,11 @@ feh)
 	;;
 copyq)
 	eval "$consequences"
-	[ "$state" ] || echo "state=floating follow=on rectangle=350x300+75+425" 
+	[ "$state" ] || echo "state=floating follow=on rectangle=350x300+75+400 sticky=on" 
 	;;
 Youtube_Music)
   eval "$consequences"
-	[ "$state" ] || echo "state=floating follow=on rectangle=450x400+890+75" 
+	[ "$state" ] || echo "state=floating follow=on rectangle=450x400+890+75i" 
 	;;
 zenity)
 	eval "$consequences"
@@ -129,6 +129,6 @@ zenity)
 	;;
 Toolkit)
 	eval "$consequences"
-	[ "$state" ] || echo "state=floating rectangle=450x400+890+75 sticky=on"
+	[ "$state" ] || echo "state=floating rectangle=849x477+0+0 center=on sticky=on"
 	;;
 esac

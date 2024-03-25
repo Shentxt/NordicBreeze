@@ -1,0 +1,169 @@
+# ----------------------------------------------------------
+#
+#  ███████╗██╗  ██╗██╗  ██╗██╗  ██╗██████╗ ██████╗  ██████╗
+#  ██╔════╝╚██╗██╔╝██║  ██║██║ ██╔╝██╔══██╗██╔══██╗██╔════╝
+#  ███████╗ ╚███╔╝ ███████║█████╔╝ ██║  ██║██████╔╝██║     
+#  ╚════██║ ██╔██╗ ██╔══██║██╔═██╗ ██║  ██║██╔══██╗██║     
+#  ███████║██╔╝ ██╗██║  ██║██║  ██╗██████╔╝██║  ██║╚██████╗
+#  ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝ ╚═╝  ╚═╝ ╚═════╝
+#
+# ----- Author: Shen - url: https://github.com/Shentxt -----
+
+# ---------------------------------------------------------
+#                  Read Carefully 
+#
+# first you need awk and have a look at script/KeybindingsHelp folder
+# this so that it is displayed in /scripts/KeybindingsHelp or in its default directory
+# add keys in launch keybindings help short and concise comments.
+# should be above each key, if you want to jump, don't comment said Keys
+# this goes in order, so order it as more to say
+#
+# Also read the hyprland wiki, especially this section:
+# wiki: https://wiki.archcraft.io/docs/window-managers/bspwm
+# 
+# ---------------------------------------------------------
+#                  No coment 
+#
+# read the first line to know that, and if you want,
+# put the keys that do not want to be commented, for more organization
+#
+# ---------------------------------------------------------
+
+# Show keybindings help
+super + ctrl + d
+	KeybindingsHelp
+
+# ---------------------------------------------------------
+
+#|||----- Aplications -----|||#
+
+# Open Terminal (wezterm)
+super + Return
+	OpenApps --terminal
+
+# Open floating Terminal (alacritty)
+super + ctrl + Return
+	OpenApps --floating
+
+# Lockscreen
+super + x
+  OpenApps --lock
+
+# Color Picker
+super + ctrl + x
+	OpenApps --color
+
+# Toggle eww dashboard
+super + alt + d
+  OpenApps --dash 
+
+#|||----- BSPWM -----|||#
+
+# Reload BSPWM
+super + r
+	bspc wm -r; notify-send "Iwai" "<span color='yellow'>Upgrade</span> complete! Our window manager is purring like a finely-tuned engine." -i ~/.config/bspwm/assets/icons/persona/iwai.png
+	
+# Reload Keybindings
+super + ctrl + r
+	pkill -USR1 -x sxhkd; notify-send "Takuto" "<span color='yellow'>Update</span> completed! The keys have been updated successfully, time to test them." -i ~/.config/bspwm/assets/icons/persona/takuto.png
+
+# close and kill
+super + {_,shift + }q
+	bspc node -{c,k}
+
+# power menu
+super + ctrl + q 
+  OpenApps --power
+
+# alternate between the tiled and monocle layout
+super + m
+	bspc desktop -l next
+
+# Hide/Unhide Window
+super + ctrl + h
+	BspHideNode
+
+# Hide/Unhide Bar
+super + h
+	HideBar {-u} 
+
+# rotate desktop
+super + c
+	bspc node @/ --rotate {90,-90}
+
+# Circulate the leaves of the tree
+super + ctrl + c
+	bspc node @/ --circulate {backward,forward}
+
+#|||----- Move Windows -----|||# 
+
+super + {1-9,0}
+    bspc desktop -f ^{1-9,10}
+
+super + shift + {1-9,0}
+    bspc node -d ^{1-9,10}
+
+# Fullscreen or Monocle
+super + ctrl + ~button3
+    bspc node -t "~"fullscreen
+
+# Toggle beetwen floating & tiled
+super + ctrl + ~button1
+    bspc node -t "~"{floating,tiled}
+
+# Pseudo Tiled & tiled mode
+super + space
+    bspc node -t "~"{pseudo_tiled,tiled}
+
+#|||----- Manage -----|||# 
+
+# Manage brightness
+XF86MonBrightness{Up,Down}
+    sh $HOME/.local/bin/brightness {up,down}
+
+# Manage Volume
+Manage volume
+XF86Audio{Raise,Lower}Volume
+    sh $HOME/.local/bin/volume {up,down}
+
+XF86AudioMute
+    sh $HOME/.local/bin/volume mute
+
+# Music control
+XF86Audio{Next,Prev,Play,Stop}
+	mpc {next,prev,toggle,stop}
+
+super + e
+    ~/.config/bspwm/scripts/opacity
+
+#|||----- Menu -----|||# 
+
+# Screenrecord
+super + ctrl + p 
+  OpenApps --record
+
+# Screenshot
+super + p 
+  OpenApps --shot
+
+# Menu aplicaciones
+super + d
+	OpenApps --menu
+
+# Menu Root
+super + shift + d 
+  OpenApps --root
+
+# Random wallpaper
+super + w
+	WallSelect
+
+# Notes
+super + ctrl + w
+ OpenApps --note
+
+# jgmenu
+~button3
+  xqp 0 $(xdo id -N Bspwm -n root) && jgmenu --csv-file=~/.config/bspwm/jgmenu/menu.txt --config-file=~/.config/bspwm/jgmenu/jgmenurc
+
+# --------------------------------------------------

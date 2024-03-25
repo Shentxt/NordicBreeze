@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# Feature to send lock notification
+function lock {
+    notify-send 'Mitsuru' "<span color='green'>Looks</span> like you're going to be inactive for a while. I'm going to activate the screen lock to keep your data safe." -i ~/.config/bspwm/assets/icons/persona/mitsuru.png
+    betterlockscreen -l
+}
+
+# Feature to send unlock notification
+function unlock {
+    notify-send 'Mitsuru' 'You have returned! Are you ready to continue with your work or would you rather do something different today?' -i ~/.config/bspwm/assets/icons/persona/mitsuru.png
+}
+
+# Run xautolock with the custom script
+exec xautolock -time 5 -locker lock -notify 30 

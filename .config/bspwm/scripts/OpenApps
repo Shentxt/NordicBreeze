@@ -47,9 +47,9 @@ case "$1" in
 --cli)
   ~/.config/bspwm/bar/scripts/clip
   ;;
---mug)
-	mugshot
-	;;
+--windows)
+  ~/.config/bspwm/scripts/windoview
+  ;;
 --wine)
 	winetricks
 	;;

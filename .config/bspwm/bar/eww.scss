@@ -30,11 +30,12 @@ $red: #dd6777;
 
 // Launcher
 .launcher_icon {
-  color: $cyan;
-  font-family: "Material Design Icons Desktop";
-  font-size: 21px;
-  padding: 2px 0 2px 0;
-  margin: 2px 0 2px 12px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 65px;
+  min-width: 65px;
+  margin: 4px 4px 4px 4px;
 }
 
 .icon {
@@ -122,5 +123,5 @@ scale trough {
   background-size: 24px;
   min-height: 4px;
   min-width: 4px;
-  margin: 0 0 4px 9px;
+  margin: 2px 0 6px 9px;
 }

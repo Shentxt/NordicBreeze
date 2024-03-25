@@ -18,7 +18,6 @@ elif [[ -d "$HOME/Música" ]]; then
     MUSIC_DIR="$HOME/Música"
 else
      notify-send "Haru" "The necessary <span color='yellow'>files</span> have not been found." -i ~/.config/bspwm/assets/icons/persona/haru.png
-#    echo "folder not found"
     exit 1
 fi
 

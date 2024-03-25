@@ -1,0 +1,57 @@
+#!/bin/bash
+
+# Path to log file
+log_file="/tmp/device_notification.log"
+
+# Stores devices for which notifications have already been sent
+connected_devices=()
+
+# Function to manage the connection of USB and Bluetooth devices
+usb_connect() {
+    device_name=$1
+
+    # Only send a notification if one hasn't been sent for this device
+    if ! [[ " ${connected_devices[@]} " =~ " ${device_name} " ]]; then
+        notify-send "Futaba" "<span color='yellow'>Connected</span> Device: $device_name"  -i ~/.config/bspwm/assets/icons/persona/futaba.png
+        echo "$(date): Connected Device: $device_name" >> $log_file
+        
+        # Add the device to the list of connected devices
+        connected_devices+=("$device_name")
+    fi
+}
+
+# Function to handle disconnection of USB and Bluetooth devices
+usb_disconnect() {
+    device_name=$1
+
+    # Only sends a notification if the device was in the list of connected devices
+    if [[ " ${connected_devices[@]} " =~ " ${device_name} " ]]; then
+      notify-send "Futaba" "<span color='yellow'>Disconnected</span> device: $device_name"  -i ~/.config/bspwm/assets/icons/persona/futaba.png
+        echo "$(date): Disconnected device: $device_name" >> $log_file
+
+        # Remove the device from the list of connected devices
+        connected_devices=(${connected_devices[@]/$device_name})
+
+        # Turn off Bluetooth
+        bluetoothctl power off
+    fi
+}
+
+# Monitor udev for connection and disconnection of USB and Bluetooth devices
+tty=$(readlink /proc/$$/fd/2)
+udevadm monitor --udev --property < $tty | while read -r line; do
+    read -r -- _ _ event devpath _ <<< "$line"
+    if [[ -z "$devpath" ]]; then
+        continue
+    fi
+    device_properties=$(udevadm info --query=property --name=$devpath)
+    device_name=$(echo "$device_properties" | grep 'ID_MODEL=' | cut -d'=' -f2)
+    device_type=$(echo "$device_properties" | grep 'DEVTYPE=' | cut -d'=' -f2)
+    if [[ $device_type == "usb_device" ]] || [[ $device_type == "bluetooth" ]]; then
+        if [[ $event == add ]]; then
+            usb_connect "$device_name"
+        elif [[ $event == remove ]]; then
+            usb_disconnect "$device_name"
+        fi
+    fi
+done &

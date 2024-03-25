@@ -82,7 +82,6 @@ copy_shot() {
 countdown() {
 	for sec in $(seq $1 -1 1); do
 		dunstify -t 1000 -h string:x-dunst-stack-tag:screenshottimer -i ~/.config/bspwm/assets/icons/persona/makoto.png "Makoto" "Taking shot in:<span color='yellow'>$sec</span>"
-
 		sleep 1
 	done
 }
