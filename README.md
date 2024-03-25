@@ -26,18 +26,18 @@ Read carefully: As not everything computers have the same features and kernel. I
 
 ## 🌿System
 
-|    Distro    |                        [Archcraft](https://github.com/archcraft-os)            |
+|    Distro    |                [EndevourOS](https://endeavouros.com/)                          |
 | :----------: | :----------------------------------------------------------------------------: |
-|      WM      |                 [BSPWM](https://github.com/baskerville/bspwm)                  |
+|     WM       |                 [BSPWM](https://github.com/baskerville/bspwm)                  |
 |   Terminal   | [Wezterm](https://github.com/wez/wezterm)-[Alacritty](https://alacritty)       |
 |   Widgets    |            [ElKowars wacky widgets](https://github.com/elkowar/eww)            |
-|   Bar        |            [Polybar](https://github.com/polybar/polybar)                       |
+|     Bar      |            [Polybar](https://github.com/polybar/polybar)                       |
 |    Shell     |                [Starship](https://github.com/starship/starship)                |
 |   Launcher   |                   [Rofi](https://github.com/davatorium/rofi)                   |
 |  Clipboard   |              [Copyq](https://github.com/hluk/CopyQ)                            |
 |    Editor    | [Neovim](https://github.com/neovim/neovim)-[Vs](https://code.visualstudio.com/)|
 |  Compositor  |              [Picom](https://github.com/FT-Labs/picom)                         |
-| Music/Player | [Amberol](https://apps.gnome.org/es/Amberol/)-ytmusic                          |
+| Music/Player |             [Amberol](https://apps.gnome.org/es/Amberol/)                      |
 | File Manager |              [Thunar](https://github.com/xfce-mirror/thunar)                   |
 | Notification |              [Dunst](https://github.com/dunst-project/dunst)                   |
 | Theme Brow   |              [Firefox-gx](https://github.com/Godiesc/firefox-gx)               |
@@ -95,9 +95,7 @@ Read carefully: As not everything computers have the same features and kernel. I
 
 # 💾Download
 
-<div style="background-color: black; color: white; padding: 10px;">
-<pre><code>
- Git/ 
+soon I will have an automatic installer/ 
  └── cd NordicBreeze/
       ├── cp -r config/* ~/.config/
       ├── cp -r firefox/* ~/.mozilla/firefox # More informations "about:support" only firefox
@@ -108,8 +106,6 @@ Read carefully: As not everything computers have the same features and kernel. I
       ├── cp -r minegrub/* /boot/grub/themes/
       ├── cp -r eww/* ~/.local/bin/
       └── cp -r .zshrc/* ~/
-</code></pre>
-</div>
 
 ## 💾Removed
 
