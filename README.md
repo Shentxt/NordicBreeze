@@ -19,10 +19,10 @@ This setup aims for visual elegance and fluidity.
 Read carefully: As not everything computers have the same features and kernel. I ask you to clarify any problem that I present in the download or post of this one. This is in order to have feedback and be able to improve.
 
 ## 🌿Keys-Map
-<div style="background-color: black; color: white; padding: 10px;">
-<pre><code>
-- **Win+Ctrl+D:** Open the key display. This key combination can be useful to access various functions in my settings</code></pre>
-</div>
+
+|     Info     |    Keys      |
+| :----------: | :----------: |
+|  Keys-Map    |  Win+Ctrl+D  |
 
 ## 🌿System
 
