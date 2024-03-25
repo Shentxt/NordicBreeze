@@ -97,6 +97,8 @@ Read carefully: As not everything computers have the same features and kernel. I
 
 soon I will have an automatic installer
 
+<div style="background-color: black; color: white; padding: 10px;">
+<pre><code>
 git/
  └── cd NordicBreeze/
       ├── cp -r config  ~/.
@@ -108,6 +110,8 @@ git/
       ├── cp -r minegrub /boot/grub/themes/
       ├── cp -r eww ~/.local/bin/
       └── cp -r .zshrc ~/
+</code></pre>
+</div>
 
 ## 💾Removed
 
