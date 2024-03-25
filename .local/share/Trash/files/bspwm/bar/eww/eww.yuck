@@ -1,3 +1,0 @@
-(include "calendar/calendar.yuck")
-(include "profilecard/profilecard.yuck")
-(include "desktop/desktop.yuck")

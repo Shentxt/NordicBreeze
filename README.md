@@ -69,9 +69,9 @@ Read carefully: As not everything computers have the same features and kernel. I
 <details>
 <summary><b><code>Rofi</code></b></summary>
 
-|Launcher|Wall|Power|
-|--|--|--|
-|![demo](/assets/Screen/launch.png "demo")|![demo](/assets/Screen/wall.png "demo")|![demo](/assets/Screen/power.png "demo")|
+|Launcher|Wall|Power|window|
+|--|--|--|--|
+|![demo](/assets/Screen/launch.png "demo")|![demo](/assets/Screen/wall.png "demo")|![demo](/assets/Screen/power.png "demo")|![demo](/assets/Screen/window.png "demo")|
 
 </details>
 

@@ -1,8 +1,0 @@
-#!/bin/bash
-
-if pgrep -x "copyq" > /dev/null
-then
-    copyq toggle
-else
-    copyq toggle
-fi
