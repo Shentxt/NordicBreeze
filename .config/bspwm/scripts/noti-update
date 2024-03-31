@@ -14,7 +14,7 @@ while true; do
     if [ "$total_updates" -gt 0 ]; then
         notify-send "Fuuka" "<span color='yellow'>$total_updates</span> updates are available"  -i ~/.config/bspwm/assets/icons/persona/fuuka.png
     else
-        notify-send "Fuuka" "<span color='yellow'>No updates available</span>" -i ~/.config/bspwm/assets/icons/persona/fuuka.png
+        notify-send "Fuuka" "No <span color='yellow'>updates</span> available" -i ~/.config/bspwm/assets/icons/persona/fuuka.png
     fi
 
     # Wait 6 hours before next check

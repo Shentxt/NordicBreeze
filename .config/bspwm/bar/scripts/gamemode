@@ -1,0 +1,34 @@
+#!/usr/bin/env sh
+
+apps=("picom" "eww" "plank" "copyq" "xautolock" "stalonetray")
+running=0
+
+for app in "${apps[@]}"
+do
+  if pgrep -x "$app" > /dev/null
+  then
+    running=1
+    break
+  fi
+done
+
+if [ $running -eq 1 ]
+then
+  for app in "${apps[@]}"
+  do
+    pkill "$app" > /dev/null 2>&1
+    bspc config window_gap 0
+    bspc config split_ratio 0.0
+    bspc config single_monocle false
+    bspc config left_padding 0
+    bspc config right_padding 0
+    bspc config bottom_padding 0
+    bspc config top_padding 0 
+    bspc config border_width 0
+  done
+  notify-send "Morgana" "Ready for the hot adventure!?, it's time to leave!!" -i ~/.config/bspwm/assets/icons/persona/morgana.png
+else
+  bspc wm -r
+  sleep 1
+  notify-send "Morgana" "ah! not now, not back to the real world" -i ~/.config/bspwm/assets/icons/persona/morgana.png
+fi

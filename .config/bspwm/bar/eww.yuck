@@ -14,7 +14,6 @@
 (defvar IMAGEP "/home/shen/.face")
 
 ;; Volume vars
-(defvar volum false)
 (defpoll volume_icon :interval "1s" "scripts/Volume --icon")
 (defpoll volume_value :interval "1s" "scripts/Volume --vol")
 
@@ -24,11 +23,15 @@
 
 ;; Updates vars
 (defpoll UPDATES :interval "2m" `Updates --get-updates`)
+
+;; updates
 (defvar pac false)
 (defvar notify false)
+(defvar wincenter false)
+(defvar volum false)
+(defvar music false)
 
 ;; Windows
-(defvar wincenter false)
 (defpoll windows :interval "1s" :initial "initial-value" :run-while windows-visible `~/.config/bspwm/bar/scripts/windows`) 
 
 ;; time
@@ -43,6 +46,46 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;							Widget Section's							 ;;	
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Launcher Music ;;
+(defwidget music []
+(eventbox	:onhover "${EWW_CMD} update music=true"	
+				:onhoverlost "${EWW_CMD} update music=false"
+				:cursor "pointer"
+	   (box		
+        :orientation "v"					
+				:space-evenly "false" 	 
+				:vexpand "false" 	
+				
+	(revealer	:transition "slidedown"				
+				:reveal music			 
+				:duration "550ms"
+	   (box	
+        :orientation "v"					
+				:space-evenly "false"
+	
+	(eventbox :cursor "pointer"			
+	(button		
+        :style "background-image: url('images/previous.png');"
+				:class "launcher_icon" 											 
+				:onclick "~/.config/bspwm/bar/scripts previous"))
+	
+	(eventbox :cursor "pointer"
+	(button		
+        :style "background-image: url('images/stop.png');"
+				:class "launcher_icon" 											 
+				:onclick "~/.config/bspwm/bar/scripts play-pause"))
+				
+	(eventbox :cursor "pointer"			
+	(button		
+        :style "background-image: url('images/next.png');"
+				:class "launcher_icon" 									 
+				:onclick "~/.config/bspwm/bar/scripts next"))))
+
+	(button	
+        :style "background-image: url('images/generic.png');"
+				:class "launcher_icon" 									
+        :onclick "OpenApps --player"))))
 
 ;; Launcher Widgets ;;
 (defwidget launcher []
@@ -82,6 +125,7 @@
 	(box		:orientation "v"  			
 	(button		:style "background-image: url('${WIFIICON}');"
 				:class "trayicon"
+        :onrightclick "OpenApps --wi"
         :onclick "OpenApps --wifi"
 				:tooltip "${NETSTAT}")))
 
@@ -256,7 +300,8 @@
 			:space-evenly "false" 
 			:valign "start" 
 (launcher)
-(workspaces)))
+(workspaces)
+  (music)))
 
 ;; Bottom Widgets ;;
 (defwidget bottom []

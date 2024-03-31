@@ -59,6 +59,10 @@ super + alt + d
 
 #|||----- BSPWM -----|||#
 
+#Game mode
+super + alt + r
+  OpenApps --game
+
 # Reload BSPWM
 super + r
 	bspc wm -r; notify-send "Iwai" "<span color='yellow'>Upgrade</span> complete! Our window manager is purring like a finely-tuned engine." -i ~/.config/bspwm/assets/icons/persona/iwai.png

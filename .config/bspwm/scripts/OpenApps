@@ -26,6 +26,9 @@ case "$1" in
 --jgmenu)
   xqp 0 $(xdo id -N Bspwm -n root) && jgmenu --csv-file=~/.config/bspwm/jgmenu/menu.txt --config-file=~/.config/bspwm/jgmenu/jgmenurc
   ;;
+--game)
+  ~/.config/bspwm/bar/scripts/gamemode
+  ;;
 --power)
   ~/.config/bspwm/bar/scripts/powermenu
   ;;
@@ -59,6 +62,9 @@ case "$1" in
 --terminal)
 	wezterm
 	;;
+--user)
+	mugshot
+	;;
 # Float Launch
 --floating)
 	alacritty --class FloaTerm,alacritty -o window.dimensions.lines=22 window.dimensions.columns=90
@@ -77,6 +83,9 @@ case "$1" in
 	;;
 --wifi)
   alacritty -e nmtui 
+  ;;
+--wi)
+  alacritty -e sudo iptraf-ng 
   ;;
 --music)
   alacritty --hold --class FloaTerm,FloaTerm -o window.dimensions.lines=22 window.dimensions.columns=90 -e ytmp3	

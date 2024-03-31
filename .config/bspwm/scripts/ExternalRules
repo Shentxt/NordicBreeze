@@ -76,6 +76,10 @@ Spotify)
 	eval "$consequences"
 	[ "$state" ] || echo "state=pseudo_tiled follow=on"
 	;;
+TLauncher)
+	eval "$consequences"
+	[ "$state" ] || echo "state=pseudo_tiled follow=on"
+	;;
 esac
 
 # ------------------------------------------------------------------

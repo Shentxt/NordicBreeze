@@ -75,3 +75,6 @@ foreground = "#cad5ff"
 timeout = 10
 background = "#2e3440"
 foreground = "#cad5ff"
+
+[appname_firefox]
+format = "<b>%s</b>\n%b"

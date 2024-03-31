@@ -1,15 +1,17 @@
 #!/usr/bin/env bash
 
-# Instala lm-sensors si no está instalado
-if ! command -v sensors &> /dev/null
-then
-    echo "lm-sensors no está instalado. Instalándolo..."
-    sudo apt-get install lm-sensors
-fi
+# Get sensor temperatures from kernel temperature files
+TEMP1=$(cat /sys/class/hwmon/hwmon0/temp1_input)
+TEMP2=$(cat /sys/class/hwmon/hwmon1/temp1_input)
+TEMP3=$(cat /sys/class/hwmon/hwmon2/temp1_input)
 
-# Detecta los sensores de hardware
-sudo sensors-detect --auto
+# Convert temperatures from one thousand degrees Celsius to degrees Celsius
+TEMP_C1=$(echo "scale=2; $TEMP1 / 1000" | bc)
+TEMP_C2=$(echo "scale=2; $TEMP2 / 1000" | bc)
+TEMP_C3=$(echo "scale=2; $TEMP3 / 1000" | bc)
 
-# Obtiene y muestra la temperatura de la CPU
-TEMP=$(sensors | awk '/^temp1/ {print $2}')
-echo "${TEMP:-null}"
+# Calculate the average temperature
+TEMP_AVG=$(echo "scale=2; ($TEMP_C1 + $TEMP_C2 + $TEMP_C3) / 3" | bc)
+
+# Print the average temperature as the CPU temperature
+echo "The average CPU temperature is ${TEMP_AVG}°C."

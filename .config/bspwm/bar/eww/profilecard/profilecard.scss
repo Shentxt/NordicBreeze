@@ -1,16 +1,17 @@
 .launchermenu {
   background-color: $bg;
-  border-radius: 0.5rem;
-  margin: 0.8rem 0.8rem;
+  border-radius: 12px;
+  border: 3px solid black;
+  border-color: $magenta;
   min-width: 18rem;
 }
 
 .timebox {
-  margin: 0 2.5rem;
+   margin: 12px 12px 12px 12px;
 
   .time-container {
     .content {
-      font-family: JetBrainsMono NF;
+      font-family: minecraft;
       font-weight: Bolder;
       font-size: 3.6rem;
       color: $fg;
@@ -24,7 +25,7 @@
   }
 
   .date-container {
-    font-family: Inconsolata SemiCondensed Medium;
+    font-family: minecraft;
     font-weight: Bold;
     font-size: 1rem;
     color: $fg;
@@ -33,7 +34,7 @@
 }
 
 .usercard {
-  background-color: $bg-alt;
+  background-color: transparent;
   border-radius: 0.5rem;
 }
 
@@ -43,29 +44,30 @@
   background-position: center;
   min-height: 65px;
   min-width: 65px;
-  //border: .2rem solid $bg;
+  border: 3px solid $bg;
   border-radius: 100%;
-  box-shadow: 0 0 7px 1px rgba($fg, 0.3);
+  border-color: $magenta;
+  //box-shadow: 0 0 7px 1px rgba($fg, 0.3);
   margin: 10px -8px 10px 10px;
 }
 
 .user-host {
   color: $fg;
-  font-family: Cartograph CF;
+  font-family: minecraft;
   font-weight: Normal;
   font-size: 1rem;
 }
 
 .host {
   color: $fg;
-  font-family: Cartograph CF;
+  font-family: minecraft;
   font-size: 0.8rem;
 }
 
 .uptime {
   color: $fg;
-  font-family: Cartograph CF;
-  font-size: 0.7rem;
+  font-family: minecraft;
+  font-size: 1.0rem;
   margin-top: 0.5rem;
 }
 
@@ -93,41 +95,17 @@
   font-size: 1rem;
 }
 
-.pacman {
-  background-color: $bg-alt;
-  padding: 0.8rem;
-  border-radius: 0.5rem;
-  color: $fg;
-
-  .pacman-icon {
-    font-family: Material Design Icons Desktop;
-    font-size: 1.2rem;
-    color: $yellow;
-  }
-
-  .pacman-info {
-    font-family: Inconsolata SemiCondensed Medium;
-    font-weight: Bold;
-    font-size: 1rem;
-  }
-
-  .pacman-updates {
-    font-family: Inconsolata Condensed Medium;
-    font-weight: Bold;
-    font-size: 1rem;
-  }
-}
-
 .fetch {
-  background-color: $bg-alt;
+  background-color: transparent;
   padding: 0.8rem 2rem 0.8rem 1rem;
   border-radius: 0.5rem;
   color: $fg;
 
   .arch-icon {
     font-family: Material Design Icons Desktop;
-    font-size: 3rem;
+    font-size: 3.2rem;
     color: $archicon;
+    margin: 0px 22px 0px 82px;
   }
 }
 
@@ -152,73 +130,40 @@
 .os-text,
 .pkgs-text,
 .wm-text {
-  font-family: Inconsolata SemiCondensed Medium;
+  font-family: minecraft;
   font-weight: Bold;
   font-size: 1rem;
 }
 
-.weatherbox {
-  background-color: $bg-alt;
-  border-radius: 0.5rem;
-  padding: 0.8rem;
-}
-
+.weatherbox,
 .weathericon {
+  margin: 4px 4px 4px 4px;
   padding: 0 0.8rem;
   border-radius: 0.5rem;
   margin-left: 0.6rem;
-  background-color: $bg-alt;
+  background-color: transparent;
   font-size: 1.5rem;
   font-family: "Font Awesome 6 Free Solid";
 }
 
-.weatherdesc {
-  font-size: 1.75rem;
-  font-family: "Inconsolata SemiCondensed Medium";
-  font-weight: Bold;
-}
-
-.weathertemp {
-  font-family: "Iosevka Nerd Font";
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: $fg;
-}
-
+.weatherdesc,
+.weathertemp,
 .weathercity {
   font-size: 0.9rem;
-  margin-top: 0.2rem;
+//  margin-top: 0.2rem;
   color: $fg;
-  font-family: Inconsolata SemiCondensed Medium;
+  font-family: minecraft;
   font-weight: Bold;
-}
-
-.launcher-apps {
-  background-color: $bg-alt;
-  padding: 0.8rem;
-  border-radius: 0.5rem;
-}
-
-.launcher-btn {
-  color: $black;
-  font-family: Material Design Icons Desktop;
-  font-size: 1.5rem;
-}
-
-.launcher-btn:hover {
-  color: $fg;
-  font-family: Material Design Icons Desktop;
-  font-size: 1.5rem;
-  text-shadow: 0 0 0.2rem $fg;
 }
 
 .progress {
-  background-color: $bg-alt;
+  background-color: transparent;
   padding: 0.7rem 0.7rem;
   border-radius: 1rem;
 
   circular-progress {
-    background-color: $black;
+    background-color: $bg-alt;
+      margin: 6px 0px 6px 0px;
 
     &.ram {
       color: $blue;
@@ -241,5 +186,6 @@
     font-family: "Font Awesome 6 Free Solid";
     font-size: 1rem;
     padding: 1.1rem;
+    margin: 4px 4px 4px 4px
   }
 }

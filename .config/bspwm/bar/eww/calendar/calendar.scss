@@ -1,7 +1,7 @@
 .date {
-  background-color: $fg;
+  background-color: $bg;
   color: $bg;
- }
+}
 
 .cal-box {
   font-family: minecraft;
@@ -10,12 +10,10 @@
   background-color: $fg;
   padding: 0 1rem 0.2rem;
   color: $fg;
-  background-color: $bg-alt;
-  margin: 0.6rem 0.6rem 0.6rem 0.6rem;
+  background-color: $bg-alt; 
   border: 3px solid black;
   border-radius: 12px;
   border-color: $magenta;
-
 
   .cal {
     background-color: inherit;
@@ -23,7 +21,7 @@
     margin-left: 10px;
      &>* {
     border: solid 0px transparent;
-    border-radius: 12px; 
+    border-radius: 12px;
   }
    
     &.highlight {
