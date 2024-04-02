@@ -32,6 +32,12 @@ case "$1" in
 --power)
   ~/.config/bspwm/bar/scripts/powermenu
   ;;
+--high)
+  ~/.config/bspwm/bar/scripts/noti-volum --inc
+  ;;
+--low)
+  ~/.config/bspwm/bar/scripts/noti-volum --dec
+  ;;
 --root)
 	~/.config/bspwm/scripts/bsproot
 	;;
@@ -122,7 +128,7 @@ case "$1" in
   eww -c "$WIDGET_DIR" open --toggle launchermenu
   ;;
 --player)
-  eww -c "$WIDGET_DIR" open --toggle music
+  eww -c "$WIDGET_DIR" open --toggle  musiccenter
   ;;
 --calendar)
   eww -c "$WIDGET_DIR" open --toggle date

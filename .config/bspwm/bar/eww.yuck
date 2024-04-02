@@ -38,6 +38,8 @@
 (defpoll  hour :interval "1s" `date "+%H"`)
 (defpoll  minutes :interval "1s" `date "+%M"`)
 (defpoll  seconds :interval "1s" `date "+%S"`)
+(defpoll musicartlink :interval "1s"
+  `playerctl metadata --format "{{ mpris:artUrl }}" | sed 's/b273/1e02/'`)
 
 ;; Script Icon
 ;;(defpoll launcher :interval "1s" :initial "initial-value" :run-while launcher-visible `~/.config/bspwm/bar/scripts/distro`)
@@ -47,45 +49,13 @@
 ;;							Widget Section's							 ;;	
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Launcher Music ;;
-(defwidget music []
-(eventbox	:onhover "${EWW_CMD} update music=true"	
-				:onhoverlost "${EWW_CMD} update music=false"
-				:cursor "pointer"
-	   (box		
-        :orientation "v"					
-				:space-evenly "false" 	 
-				:vexpand "false" 	
-				
-	(revealer	:transition "slidedown"				
-				:reveal music			 
-				:duration "550ms"
-	   (box	
-        :orientation "v"					
-				:space-evenly "false"
-	
-	(eventbox :cursor "pointer"			
-	(button		
-        :style "background-image: url('images/previous.png');"
-				:class "launcher_icon" 											 
-				:onclick "~/.config/bspwm/bar/scripts previous"))
-	
-	(eventbox :cursor "pointer"
-	(button		
-        :style "background-image: url('images/stop.png');"
-				:class "launcher_icon" 											 
-				:onclick "~/.config/bspwm/bar/scripts play-pause"))
-				
-	(eventbox :cursor "pointer"			
-	(button		
-        :style "background-image: url('images/next.png');"
-				:class "launcher_icon" 									 
-				:onclick "~/.config/bspwm/bar/scripts next"))))
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;							      Bar2							 ;;	
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-	(button	
-        :style "background-image: url('images/generic.png');"
-				:class "launcher_icon" 									
-        :onclick "OpenApps --player"))))
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;							      Bar1							 ;;	
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Launcher Widgets ;;
 (defwidget launcher []
@@ -128,6 +98,32 @@
         :onrightclick "OpenApps --wi"
         :onclick "OpenApps --wifi"
 				:tooltip "${NETSTAT}")))
+
+;; Launcher Music ;;
+(defwidget music []
+  (eventbox :onhover "${EWW_CMD} update music=true"	
+            :onhoverlost "${EWW_CMD} update music=false"
+            :cursor "pointer"
+    (box :orientation "v"					
+         :space-evenly "false" 	 
+         :vexpand "false" 	
+      (button :style "background-image: url('${musicartlink}');"
+              :class "launcher_icon"
+              :onrightclick "playerctl play-pause"
+              :onclick "OpenApps --player")
+      (revealer :transition "slidedown"				
+                :reveal music			 
+                :duration "550ms"
+        (box :orientation "v"					
+             :space-evenly "false"
+          (eventbox :cursor "pointer"			
+            (button :style "background-image: url('images/previous.png');"
+                    :class "launcher_icon" 											 
+                    :onclick "playerctl previous"))
+          (eventbox :cursor "pointer"			
+            (button :style "background-image: url('images/next.png');"
+                    :class "launcher_icon" 									 
+                    :onclick "playerctl next")))))))
 
 ;; window center ;;
 (defwidget wincenter []
@@ -294,24 +290,16 @@
 ;;							Positions Section's							 ;;	
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Top Widgets ;;
-(defwidget top []
+;; Bar1 Widgets ;;
+(defwidget top1 []
 	(box	:orientation "v" 
 			:space-evenly "false" 
 			:valign "start" 
 (launcher)
 (workspaces)
-  (music)))
+(music)))
 
-;; Bottom Widgets ;;
-(defwidget bottom []
-	(box	:orientation "v" 
-			:space-evenly "false"
-(time)
-(power)))
-
-;; Control Panel Widgets ;;	
-(defwidget control []
+(defwidget control1 []  ;; Control Panel for Bar 1
 	(box :orientation "v" 
 		 :space-evenly false  
 		 :class "control"
@@ -321,36 +309,72 @@
 (wifi)
 (pacman)))
 
-;; End Widgets ;;
-(defwidget end []
+(defwidget bottom1 []  ;; Bottom Widget for Bar 1
+	(box	:orientation "v" 
+			:space-evenly "false"
+(time)
+(power)))
+
+(defwidget end1 []
 	(box :orientation "v" 
 		 :space-evenly "false" 
 		 :valign "end" 
 		 :spacing 5
-(control)
-(bottom)))
+(control1)  ;; Include control panel in Bar 1
+(bottom1)))  ;; Include bottom widget in Bar 1
 
-;; Bar Widgets ;;
 (defwidget bar []
 	(box :class "eww_bar" 
 		 :orientation "v" 
 		 :vexpand "false" 
 		 :hexpand "false"
-(top)
-(end)))
+(top1)
+(end1)))
+
+;; Bar2 Widgets ;;
+(defwidget top2 []
+	(box	:orientation "h" 
+			:space-evenly "false" 
+			:valign "start"))
+
+(defwidget end2 []
+	(box :orientation "h" 
+		 :space-evenly "false" 
+		 :valign "end" 
+		 :spacing 5))
+
+(defwidget bar2 []
+	(box :class "eww_bar2" 
+		 :orientation "h" 
+		 :vexpand "false" 
+		 :hexpand "false"
+(top2)
+(end2)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;							Window Section's							 ;;	
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defwindow bar
-	:geometry (geometry :x "15px"
-						:y "0%"
+	:geometry (geometry :x "6px"
+						:y "0px"
 						:anchor "left center"
 						:height "95%"
-						:width "50px")
+						:width "25px")
 						
 	:reserve (struts :distance "5px"
 					 :side "left")
 	:wm-ignore false
 	(bar))
+
+(defwindow bar2
+	:geometry (geometry :x "0px" 
+            :y "3px"  
+						:anchor "top center"  
+						:height "25px"  
+						:width "25%")  
+						
+	:reserve (struts :distance "5px"
+					 :side "top")
+	:wm-ignore false
+	(bar2))

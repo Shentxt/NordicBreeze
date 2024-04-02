@@ -40,10 +40,10 @@ bspc config single_monocle true
 bspc config borderless_monocle false
 bspc config gapless_monocle false
 
-bspc config left_padding 65
-bspc config right_padding 2
-bspc config bottom_padding 2
-bspc config top_padding 2
+bspc config left_padding 48
+bspc config right_padding 1
+bspc config bottom_padding 1
+bspc config top_padding 38
 bspc config focus_follows_pointer true
 bspc config pointer_follows_focus false
 bspc config pointer_motion_interval 5

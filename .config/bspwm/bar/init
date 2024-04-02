@@ -1,7 +1,13 @@
 #!/usr/bin/env bash
 
+#launch_bars() {
+#    eww -c ~/.config/bspwm/bar open --toggle bar
+#    eww -c ~/.config/bspwm/bar open --toggle bar
+#}
+
 launch_bars() {
     eww -c ~/.config/bspwm/bar open --toggle bar
+    eww -c ~/.config/bspwm/bar open --toggle bar2
 }
 
 ### ---------- Apply Configurations ---------- ###

@@ -37,7 +37,7 @@ Read carefully: As not everything computers have the same features and kernel. I
 |  Clipboard   |              [Copyq](https://github.com/hluk/CopyQ)                            |
 |    Editor    | [Neovim](https://github.com/neovim/neovim)-[Vs](https://code.visualstudio.com/)|
 |  Compositor  |              [Picom](https://github.com/FT-Labs/picom)                         |
-| Music/Player |             [Amberol](https://apps.gnome.org/es/Amberol/)                      |
+| Music/Player |             [Youtube-music](https://music.youtube.com/)                        |
 | File Manager |              [Thunar](https://github.com/xfce-mirror/thunar)                   |
 | Notification |              [Dunst](https://github.com/dunst-project/dunst)                   |
 | Theme Brow   |              [Firefox-gx](https://github.com/Godiesc/firefox-gx)               |

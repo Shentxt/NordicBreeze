@@ -121,24 +121,17 @@ super + space
 
 #|||----- Manage -----|||# 
 
-# Manage brightness
-XF86MonBrightness{Up,Down}
-    sh $HOME/.local/bin/brightness {up,down}
-
-# Manage Volume
-Manage volume
-XF86Audio{Raise,Lower}Volume
-    sh $HOME/.local/bin/volume {up,down}
-
-XF86AudioMute
-    sh $HOME/.local/bin/volume mute
-
-# Music control
-XF86Audio{Next,Prev,Play,Stop}
-	mpc {next,prev,toggle,stop}
-
 super + e
     ~/.config/bspwm/scripts/opacity
+
+super + u
+   OpenApps --high
+
+super + i
+   OpenApps --low
+
+super + m 
+  OpenApps --player
 
 #|||----- Menu -----|||# 
 

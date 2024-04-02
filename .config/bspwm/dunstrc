@@ -17,7 +17,7 @@ follow = mouse
 width = 400
 height = 900
 origin = top-center
-offset = 10x22
+offset = 10x45
 indicate_hidden = yes
 shrink = yes
 

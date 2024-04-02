@@ -19,13 +19,14 @@ get_volume() {
 
 # Notify
 notify_user() {
-    ${notify_cmd} -i "$icon" "Volume : $(get_volume)%"
+    local volume=$(get_volume)
+    notify-send "Fuuka" "volume: <span color='yellow'>${volume}%</span>" -i ~/.config/bspwm/assets/icons/persona/fuuka.png
 }
 
 # Adjust Volume
 adjust_volume() {
     [[ $(pamixer --get-mute) == true ]] && pamixer -u
-    pamixer --allow-boost --set-limit 150 "$1" "$2" && get_icon && notify_user
+    pamixer --allow-boost --set-limit 150 "$1" "$2" && notify_user 
 }
 
 # Toggle Mute

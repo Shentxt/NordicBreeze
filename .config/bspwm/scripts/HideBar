@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
 
-#  ╦ ╦╦╔╦╗╔═╗  ╔╗ ╔═╗╦═╗
-#  ╠═╣║ ║║║╣   ╠╩╗╠═╣╠╦╝
-#  ╩ ╩╩═╩╝╚═╝  ╚═╝╩ ╩╩╚═
-# Simple script to hide/show polybar
-# Author: z0mbi3
-# url:    https://github.com/gh0stzk
+# ------------------------------------------------------------------------
+# ██╗  ██╗██╗██████╗ ███████╗██████╗  █████╗ ██████╗ 
+# ██║  ██║██║██╔══██╗██╔════╝██╔══██╗██╔══██╗██╔══██╗
+# ███████║██║██║  ██║█████╗  ██████╔╝███████║██████╔╝
+# ██╔══██║██║██║  ██║██╔══╝  ██╔══██╗██╔══██║██╔══██╗
+# ██║  ██║██║██████╔╝███████╗██████╔╝██║  ██║██║  ██║
+# ╚═╝  ╚═╝╚═╝╚═════╝ ╚══════╝╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+# ----- Author: Shen - url: https://github.com/Shentxt -----
 
 conf_file="$HOME/.config/bspwm/Theme.sh"
 T_Padding=$(grep "bspc config top_padding" "$conf_file" | awk '{print $NF}')
@@ -20,6 +22,7 @@ hide() {
 
 	if pgrep -f 'eww.*bar'; then
 			(eww -c "$HOME"/.config/bspwm/bar open --toggle bar)
+      (eww -c "$HOME"/.config/bspwm/bar open --toggle bar2)
 			(bspc config left_padding 2)
 			(bspc config right_padding 2)
 		fi
@@ -31,7 +34,8 @@ unhide() {
 	(bspc config bottom_padding "$B_Padding")
 
 	if pgrep -f 'eww.*bar'; then
-			(eww -c "$HOME"/.config/bspwm/bar open --toggle bar)
+    (eww -c "$HOME"/.config/bspwm/bar open --toggle bar)
+    (eww -c "$HOME"/.config/bspwm/bar open --toggle bar2)
 			(bspc config left_padding "$L_Padding")
 			(bspc config right_padding "$R_Padding")
 		fi
