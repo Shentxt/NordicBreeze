@@ -121,16 +121,20 @@ super + space
 
 #|||----- Manage -----|||# 
 
+# Opacity windows
 super + e
     ~/.config/bspwm/scripts/opacity
 
+# Hight volume
 super + u
    OpenApps --high
 
+# Low volume
 super + i
    OpenApps --low
 
-super + m 
+# open player music
+super + shift + m 
   OpenApps --player
 
 #|||----- Menu -----|||# 

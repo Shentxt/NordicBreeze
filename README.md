@@ -2,7 +2,7 @@
      <h1> 🌸 Shen ~ NordicBreeze Dotfiles 🌸</h1>
  </div>
  
-![Logotype](/assets/bsp.png "a logo")
+![Logotype](/assets/bocchi.webp "a logo")
 
 # 🌿Sections
 
@@ -17,6 +17,8 @@ Don't you think a system should be visually beautiful but just as fast? Simple y
 This setup aims for visual elegance and fluidity.
 
 Read carefully: As not everything computers have the same features and kernel. I ask you to clarify any problem that I present in the download or post of this one. This is in order to have feedback and be able to improve.
+
+# ━────────────━────────────━━────────────━━────────────━━────────────━━
 
 ## 🌿Keys-Map
 
@@ -45,7 +47,8 @@ Read carefully: As not everything computers have the same features and kernel. I
 | Sesion UI    |   [Glorius](https://github.com/thecmdrunner/lightdm-glorious-webkit2)          |
 |   Grub       |          [Minecraft](https://github.com/Lxtharia/minegrub-theme)               |
 | statepage    |          [Tartarus](https://alljavi.github.io/tartarus-startpage/)             |
-      
+
+# ━────────────━────────────━━────────────━━────────────━━────────────━━
 
 # 🌿Galery
 
@@ -93,25 +96,13 @@ Read carefully: As not everything computers have the same features and kernel. I
 
 </details>
 
+# ━────────────━────────────━━────────────━━────────────━━────────────━━
+
 # 💾Download
+## 📦Packages
+### It was removed for simplicity, and has been put in a separate md file
 
-soon I will have an automatic installer
-
-<div style="background-color: black; color: white; padding: 10px;">
-<pre><code>
-git/
- └── cd NordicBreeze/
-      ├── cp -r config  ~/.
-      ├── cp -r firefox ~/.mozilla/firefox # More informations "about:support" only firefox
-      ├── cp -r fonts /usr/share
-      ├── cp -r icons /usr/share
-      ├── cp -r slice /usr/share/sddm/themes # Only sddm theme 
-      ├── cp -r glorius /usr/share/lightdm-webkit/themes/ # Only Lighdm 
-      ├── cp -r minegrub /boot/grub/themes/
-      ├── cp -r eww ~/.local/bin/
-      └── cp -r .zshrc ~/
-</code></pre>
-</div>
+- [Packers](Apps.md)
 
 ## 💾Removed
 
@@ -125,46 +116,9 @@ git/
 </code></pre>
 </div>
 
-## 📦Packages
+# ━────────────━────────────━━────────────━━────────────━━────────────━━
 
-<div style="background-color: black; color: white; padding: 10px;">
-<pre><code>
-# use paru or your package manager (Possibly it only works in arch, if you try it in another distro let me know)
-Packages/
-├── BSPWM/
-│   ├── Sxhkdrc
-    ├── Dunst
-    ├── Polybar
-    ├── Eww
-    ├── Feh
-    ├── Picom
-    ├── Firefox
-    ├── Physlock
-├── Terminal/
-│   ├── Wezterm
-    ├── Alacritty
-├── Menu/
-│   ├── Rofi
-    ├── Jgmenu
-├── AMD/
-│   ├── AMDctl
-    ├── Corectrl
-    ├── Supergfxctl
-├── Features/
-    ├── Grimblast
-    ├── Stalonetra
-    ├── Xclip
-    ├── Notify-send
-    ├── Copyq
-    ├── yt-dlp
-    ├── Xblacklight
-    ├── betterlocksreen 
-    ├── lightdm (Glorious)
-    ├── Archcraft
-    └── themes/
-        └── nordic-bluish-accent-theme/
-</code></pre>
-</div>
+![Logotype](/assets/persona.png "a logo")
 
 # 🌿Contact Me
 
@@ -181,6 +135,7 @@ Packages/
 
 ## 🌿Based in 
 
+- 🌸 [Spelljinxer]( https://github.com/Spelljinxer/dotfiles?tab=readme-ov-file)
 - 🌸 [AlphaTecnolog](https://github.com/AlphaTechnolog/dotfiles)
 - 🌸 [Juminai](https://github.com/juminai/dotfiles)
 - 🌸 [Gh0stzk](https://github.com/gh0stzk/dotfiles)

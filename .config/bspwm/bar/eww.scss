@@ -56,27 +56,17 @@ $red: #dd6777;
 .works {
   font-family: "Material Design Icons Desktop";
   padding: 2px 0 2px 0;
-  margin: 2px 0 2px 12px;
-  background-color: $background;
+  margin: 2px 2px 2px 2px;
   border-radius: 6px;
 }
 
-.workspace-focused {
+.workspace-focused,
+.workspace-occupied,
+.workspace-empty{
   font-size: 18px;
   color:  $white;
   margin: 0 0 2px 0;
-}
-
-.workspace-occupied {
-  font-size: 21px;
-  color: $cyan;
-  margin: 0 0 2px 0;
-}
-
-.workspace-empty {
-  font-size: 21px;
-  color: $white;
-  margin: 0 0 2px 0;
+  background: linear-gradient(to bottom right,$magenta, $cyan);
 }
 
 // icons info
@@ -116,11 +106,15 @@ scale trough {
 }
 
 // Clock
+.hour,
+.minutes,
+.seconds,
 .time {
   font-family: minecraft;
   font-weight: bold;
   font-size: 18px;
-  background-color: $foreground;
+// background-color: $foreground;
+// background: linear-gradient(to bottom right,$magenta, $cyan);
   color: $white;
 }
 

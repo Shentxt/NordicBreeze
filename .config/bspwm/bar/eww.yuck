@@ -31,6 +31,11 @@
 (defvar volum false)
 (defvar music false)
 
+;; Music
+(defpoll playingorpaused :interval "0" `playerctl status || echo "NoTrack"`)
+(defpoll musicartlink :interval "1s"
+  `(url=$(playerctl metadata --format "{{ mpris:artUrl }}" | sed 's/b273/1e02/'); if [ -z "$url" ]; then echo "/home/shen/.config/bspwm/bar/images/music.png"; else echo "$url"; fi)`)
+
 ;; Windows
 (defpoll windows :interval "1s" :initial "initial-value" :run-while windows-visible `~/.config/bspwm/bar/scripts/windows`) 
 
@@ -38,11 +43,10 @@
 (defpoll  hour :interval "1s" `date "+%H"`)
 (defpoll  minutes :interval "1s" `date "+%M"`)
 (defpoll  seconds :interval "1s" `date "+%S"`)
-(defpoll musicartlink :interval "1s"
-  `playerctl metadata --format "{{ mpris:artUrl }}" | sed 's/b273/1e02/'`)
 
 ;; Script Icon
-;;(defpoll launcher :interval "1s" :initial "initial-value" :run-while launcher-visible `~/.config/bspwm/bar/scripts/distro`)
+;; use this on the horizontal bar, since it is not made for the vertical bar, I will try to solve it soon
+(defpoll launcher :interval "1s" :initial "initial-value" :run-while launcher-visible `~/.config/bspwm/bar/scripts/distro`)
 (defpoll tray :interval "1s" :initial "initial-value" :run-while tray-visible `~/.config/bspwm/bar/scripts/tray --status`)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -73,7 +77,7 @@
 		 :space-evenly "false" 
 		 :spacing -15
      :class "icon"
-     (label :text windows))) 
+  (label :text windows))) 
 
 ;; Tray Widgets
 (defwidget tray []
@@ -104,10 +108,12 @@
   (eventbox :onhover "${EWW_CMD} update music=true"	
             :onhoverlost "${EWW_CMD} update music=false"
             :cursor "pointer"
+            :visible {playingorpaused != "NoTrack"} 
     (box :orientation "v"					
          :space-evenly "false" 	 
          :vexpand "false" 	
-      (button :style "background-image: url('${musicartlink}');"
+      (button 
+              :style "background-image: url('${musicartlink}');"
               :class "launcher_icon"
               :onrightclick "playerctl play-pause"
               :onclick "OpenApps --player")

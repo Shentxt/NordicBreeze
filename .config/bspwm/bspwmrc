@@ -74,9 +74,6 @@ bspc rule -a scratch sticky=on state=floating focus=on
 
 #|||----- Autostart -----|||#
 
-# Set system vars for polybar
-. SetSysVars
-
 pkill xautolock
 
 # System Scripts
@@ -109,7 +106,7 @@ sxhkd -c "$HOME"/.config/bspwm/sxhkdrc &
 dunst -config "$HOME"/.config/bspwm/dunstrc &
 
 # xautolock
-xautolock -time 50 -locker 'notify-send "Mitsuru" "<span color='\''yellow'\''>Looks</span> like you'\''re going to be inactive for a while. I'\''m going to activate the screen lock to keep your data safe." -i ~/.config/bspwm/assets/icons/persona/mitsuru.png && sleep 50 && betterlockscreen -l' &
+xautolock -time 20 -locker 'notify-send "Mitsuru" "<span color='\''yellow'\''>Looks</span> like you'\''re going to be inactive for a while. I'\''m going to activate the screen lock to keep your data safe." -i ~/.config/bspwm/assets/icons/persona/mitsuru.png && sleep 50 && betterlockscreen -l' &
 
 # Launch polkit
 pidof -q polkit-gnome-authentication-agent-1 || { /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & }
@@ -120,6 +117,10 @@ xsetroot -cursor_name left_ptr
 # Applications
 copyq &
 plank &
+
+# Services
+systemctl start bluetooth --user &
+systemctl start NetworkManager --user &
 
 # eww
 . ~/.config/bspwm/bar/init &

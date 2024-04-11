@@ -1,7 +1,6 @@
 [Desktop Entry]
 Type=Application
-Name=Fetch
+Name=neofetch
 Icon=terminal
-Terminal=false
-Exec=OpenApps --fetch
-#Exec=termite --hold -e zfetch
+Terminal=true
+Exec=sh -c 'neofetch; exec bash'

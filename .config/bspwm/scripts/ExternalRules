@@ -24,7 +24,7 @@ FloaTerm)
 	eval "$consequences"
 	[ "$state" ] || echo "state=floating  rectangle=849x477+0+0 center=on"
 	;;
-Alacritty)
+kitty)
 	eval "$consequences"
 	[ "$state" ] || echo "state=floating  rectangle=849x477+0+0 center=on"
 	;;
@@ -121,11 +121,11 @@ feh)
 	;;
 copyq)
 	eval "$consequences"
-	[ "$state" ] || echo "state=floating follow=on rectangle=350x300+75+400 sticky=on" 
+	[ "$state" ] || echo "state=floating follow=on rectangle=350x300+57+400 sticky=on" 
 	;;
-Youtube_Music)
+youtube-music)
   eval "$consequences"
-	[ "$state" ] || echo "state=floating follow=on rectangle=450x400+890+75i" 
+	[ "$state" ] || echo "state=floating follow=on rectangle=450x400+890+75" 
 	;;
 zenity)
 	eval "$consequences"

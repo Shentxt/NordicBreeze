@@ -37,7 +37,7 @@ print_updates() {
         case "$choice" in
             1) file ;;
             2) pack ;;
-            3) pkill alacritty;;
+            3) pkill kitty;;
             *) echo "Invalid option." ;;
         esac
     done
@@ -78,7 +78,7 @@ update_system() {
         case "$choice" in
             1) update ;;
             2) install ;;
-            3) pkill alacritty ;;
+            3) pkill kitty ;;
             *) echo "Invalid option." ;;
         esac
     done

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Minecraft
+Exec=sh -c 'java -jar /home/shen/.tlauncher/TLauncher-2.899.jar'
+Terminal=false
+Type=Application
+Icon=minecraft
+StartupWMClass=minecraft
+Comment=videogame
+Categories=videogame;

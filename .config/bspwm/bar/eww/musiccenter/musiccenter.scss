@@ -2,7 +2,7 @@
   background-color: $bg;
   color: $fg;
   border-radius: 12px;
-  border: 3px solid $magenta;
+  border: 2px solid $magenta;
 }
 .musiccontrols{
   background-color: $bg;
@@ -13,11 +13,14 @@
 .musicbutton{
   margin-top: 0px;
   font-size: 20px;
+  text-shadow: 2px 2px 4px $lavanda;
 }
 .musictitle{
   margin-top: 5px;
   font-size:15px;
   font-weight: 600;
+  font-style: italic;
+  text-shadow: 2px 2px 4px $lavanda;
 }
 .musicscale scale trough highlight {
   all: unset;
@@ -35,15 +38,14 @@
 .musicscale label{
   font-size: 13px;
 }
-.musicart{
-  background-image: unset;
-  border-radius: 20px;
-}
-
 .pfp, .musicart {
-  min-width: 200px;
-  min-height: 200px;
-  background-size: contain;
+  min-width: 100px;
+  min-height: 100px;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  background-image: unset;
+  border-radius: 8px;
+  box-shadow: 2px 2px 2px 0 $lavanda;
+  opacity: 0.5;
 }

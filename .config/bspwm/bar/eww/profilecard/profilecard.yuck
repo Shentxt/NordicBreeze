@@ -238,6 +238,6 @@
 ;; Windows ;;
 
 (defwindow launchermenu
-    :geometry (geometry :x "80px" :y "0px" :anchor "left center")
+    :geometry (geometry :x "58px" :y "0px" :anchor "left center")
     :wm-ignore false
     (launchermenu))

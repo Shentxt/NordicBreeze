@@ -73,38 +73,29 @@ case "$1" in
 	;;
 # Float Launch
 --floating)
-	alacritty --class FloaTerm,alacritty -o window.dimensions.lines=22 window.dimensions.columns=90
+	kitty --class FloaTerm
   ;;
 --update)
-	alacritty --hold --class FloaTerm,FloaTerm -o window.dimensions.lines=22 window.dimensions.columns=90 -e Updates --update-system
+  kitty --hold --class FloaTerm -e Updates --update-system
 	;;
 --checkupdates)
-	alacritty --hold --class Updating,Updating -o window.dimensions.lines=22 window.dimensions.columns=47 -e Updates --print-updates
+	kitty --hold --class Updating -e Updates --print-updates
 	;;
---ranger)
-  alacritty -e ranger
-  ;;
 --editor)
-	alacritty -e nvim
+	kitty -e nvim
 	;;
 --wifi)
-  alacritty -e nmtui 
+  kitty -e nmtui 
   ;;
 --wi)
-  alacritty -e sudo iptraf-ng 
+  kitty -e sudo iptraf-ng 
   ;;
 --music)
-  alacritty --hold --class FloaTerm,FloaTerm -o window.dimensions.lines=22 window.dimensions.columns=90 -e ytmp3	
+  kitty --hold --class FloaTerm -e ytmp3	
 	;;
 --send)
-  alacritty --hold --class FloaTerm,FloaTerm -o window.dimensions.lines=22 window.dimensions.columns=90 -e send	
+  kitty --hold --class FloaTerm -e send	
   ;;
---show)
-  python3 ~/.config/bspwm/bar/scripts/show.py  
-  ;;
---fetch)
-	alacritty --hold --class FloaTerm,FloaTerm -o window.dimensions.lines=26 window.dimensions.columns=40 -e ~/.local/bin/sysfetch
-	;;
 # Apps
 --filemanager)
 	thunar

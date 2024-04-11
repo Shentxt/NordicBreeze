@@ -23,13 +23,13 @@ mesg="Directory :: $(xdg-user-dir VIDEOS)/ScreenRecordings"
 # Options
 layout=$(cat ${RASI} | grep 'USE_ICON' | cut -d'=' -f2)
 if [[ "$layout" == 'NO' ]]; then
-	option_1=" Start Recording (Sound)"
-  option_2=" Start Recording"
-	option_3=" Stop Recording"
+	option_1="  Start Recording (Sound)"
+  option_2="  Start Recording"
+	option_3="  Stop Recording"
 else
-  option_1=" Start Recording (Sound)"
-	option_2=" Start Recording"
-	option_3=" Stop Recording"
+  option_1="  Start Recording (Sound)"
+	option_2="  Start Recording"
+	option_3="  Stop Recording"
 fi
 
 # Rofi CMD

@@ -14,9 +14,17 @@
 # default values
 AUTHOR=$(whoami)
 NOTES_FOLDER="$HOME/.notes"
-NOTES_EDITOR='alacritty -e nvim '
+NOTES_EDITOR='kitty -e nvim '
 
 theme=~/.config/rofi/themes/default.rasi
+
+# Define the icons
+new_icon=" "
+edit_icon=" "
+delete_icon="󰆴 "
+yes_icon=" "
+no_icon=" "
+cancel_icon="󰷆 "
 
 if [[ ! -d "${NOTES_FOLDER}" ]]; then
 	mkdir -p "$NOTES_FOLDER"
@@ -33,14 +41,14 @@ edit_note() {
 
 delete_note() {
 	local note=$1
-	local action=$(echo -e "Yes\nNo" | rofi -theme $theme -dmenu -p "Are you sure you want to delete $note? ")
+	local action=$(echo -e "$yes_icon Yes\n$no_icon No" | rofi -theme $theme -dmenu -p "Are you sure you want to delete $note? ")
 
 	case $action in
-	"Yes")
+	"$yes_icon Yes")
 		rm "$NOTES_FOLDER/$note"
 		main
 		;;
-	"No")
+	"$no_icon No")
 		main
 		;;
 	esac
@@ -49,13 +57,13 @@ delete_note() {
 note_context() {
 	local note=$1
 	local note_location="$NOTES_FOLDER/$note"
-	local action=$(echo -e "Edit\nDelete" | rofi -theme $theme -dmenu -p "$note > ")
+	local action=$(echo -e "$edit_icon Edit\n$delete_icon Delete" | rofi -theme $theme -dmenu -p "$note > ")
 	case $action in
-	"Edit")
+	"$edit_icon Edit")
 		edit_note "$note_location"
 		exit 0
 		;;
-	"Delete")
+	"$delete_icon Delete")
 		delete_note "$note"
 		exit 0
 		;;
@@ -65,10 +73,10 @@ note_context() {
 }
 
 new_note() {
-	local title=$(echo -e "Cancel" | rofi -theme $theme -dmenu -p "Input title: ")
+	local title=$(echo -e "$cancel_icon Cancel" | rofi -theme $theme -dmenu -p "Input title: ")
 
 	case "$title" in
-	"Cancel")
+	"$cancel_icon Cancel")
 		main
 		;;
 	*)
@@ -96,16 +104,16 @@ new_note() {
 
 main() {
 	local all_notes="$(get_notes)"
-	local first_menu="New"
+	local first_menu="$new_icon New"
 
 	if [ "$all_notes" ]; then
-		first_menu="New\n${all_notes}"
+		first_menu="$new_icon New\n${all_notes}"
 	fi
 
-	local note=$(echo -e "$first_menu" | rofi -theme $theme -dmenu -p "󰚸  Notes")
+	local note=$(echo -e "$first_menu" | rofi -theme $theme -dmenu -p "Notes")
 
 	case $note in
-	"New")
+	"$new_icon New")
 		new_note
 		;;
 	"")
