@@ -3,4 +3,4 @@ Type=Application
 Name=neofetch
 Icon=terminal
 Terminal=true
-Exec=sh -c 'neofetch; exec bash'
+Exec=sh -c 'neofetch | lolcat; exec bash'

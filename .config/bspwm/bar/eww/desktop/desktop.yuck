@@ -1,0 +1,108 @@
+(defpoll quote_text   :interval "10m" "~/.config/bspwm/bar/scripts/quotes quote")
+(defpoll quote_author :interval "10m" "~/.config/bspwm/bar/scripts/quotes author")
+
+(defpoll    panel_clock :interval "1s" `date "+%H:%M  |  %b. %d. %A"`)
+(defpoll    hour        :interval "1s" `date "+%H"`)
+(defpoll    minutes     :interval "1s" `date "+%M"`)
+(defpoll    seconds     :interval "1s" `date "+%S"`)
+(defpoll    date        :interval "1s" `date "+%b. %d. %A"`)
+
+(defvar desktop_reveal true)
+(defwidget desktop [] (box
+    :class "desktop"
+    (desktop_clock)))
+
+(defwidget desktop_clock [] (box
+    :class "clock"
+    :space-evenly false
+    :orientation "v"
+    :valign "center"
+    :halign "center"
+    (box
+        :space-evenly false
+        :class "time"
+        (label :class "hour" :text hour)
+        (box 
+        :class "timebox" 
+        :valign "center" 
+        :orientation "v" 
+        :spacing 12
+        (box 
+          :class "timebox magenta" 
+          ""
+        )
+        (box 
+          :class "timebox green" 
+          ""
+        )
+        (box 
+          :class "timebox yellow" 
+          ""
+        )
+      )
+        (label :class "minutes" :text minutes)
+    (box 
+        :class "timebox" 
+        :valign "center" 
+        :orientation "v" 
+        :spacing 12
+        (box 
+          :class "timebox magenta" 
+          ""
+        )
+        (box 
+          :class "timebox green" 
+          ""
+        )
+        (box 
+          :class "timebox yellow" 
+          ""
+        )
+      )
+    (label :class "seconds" :text seconds))
+    (box :class "separator" :height 2 :hexpand true) 
+    (box :class "separator" :height 2 :hexpand true)
+    (box :halign "center") 
+    (label :class "date" :text date)
+    (box :class "separator" :height 2 :hexpand true) 
+    (box :class "separator" :height 2 :hexpand true) 
+        (quotes  
+        :quote_text "example."
+        :quote_author "example"))
+)
+
+(defwidget quotes [] 
+(box
+    :class "quote" 
+    :orientation "h" 
+    :halign "center"
+    :spacing 0 
+    :space-evenly "false"
+    (box
+      :orientation "v" 
+      :spacing 0 
+      :space-evenly "false" 
+      (label 
+        :class "quote-text" 
+        :halign "center" 
+        :wrap "true"
+        :text "\"${quote_text}\""
+      )
+      (label 
+        :class "quote-author" 
+        :halign "center" 
+        :wrap "true"
+        :text quote_author
+      )
+    )
+  )
+)
+
+(defwindow desktop
+    :monitor 0
+    :stacking "bg"
+    :focusable false
+    :windowtype "desktop"
+    :geometry (geometry :width  "100%"
+                        :height "100%"
+                        :anchor "center")(desktop))

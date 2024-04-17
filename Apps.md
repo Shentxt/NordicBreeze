@@ -4,6 +4,9 @@ Githu: https://github.com/Shentxt
 Readme: any problem or package error contact me
 ---
 
+## redirect the link so eww can find your directory (use you dir)
+ln -s ~/.config/bspwm/bar ~/.config/eww
+
 ## Main Applications
 ### just copy and paste the following sequence (remember to change yay for your specific package). Extra information, as this is an arch distro, verify that in your distro there are said applications called the same way
 

@@ -25,6 +25,7 @@ then
     bspc config bottom_padding 0
     bspc config top_padding 0 
     bspc config border_width 0
+    pkill eww -c ~/.config/bspwm/bar/eww open --toggle  desktop
   done
   notify-send "Morgana" "Ready for the hot adventure!?, it's time to leave!!" -i ~/.config/bspwm/assets/icons/persona/morgana.png
 else

@@ -1,0 +1,47 @@
+.desktop{
+    .clock{color: $fg;}
+        .time{
+            .hour{ color: $red; }
+            .minutes{ color: $magenta; }
+            .seconds{ color: $green; }
+            border: 3px solid $yellow;
+            border-radius: 12px;
+            padding: .5em 1.3em;
+            margin-bottom: 1rem;
+            .hour, .minutes, .seconds, .separator{
+            font-size: 8rem;
+            font-family: minecraft;
+            margin-right: 1rem;
+            margin-left: 1rem;
+            margin-top: 1rem;
+         }
+  }
+
+        .date{ 
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            margin-top: 1rem;
+        }
+
+     .timebox {
+    font-family: "Font Awesome 6 Pro Solid";
+    font-size: 1.2rem;
+
+    &.magenta {
+      color: $magenta;
+    }
+    &.green {
+      color: $green;
+    }
+    &.yellow {
+      color: $yellow;
+    }
+}
+
+  .quote-text, .quote-author{
+    font-size:  1.2rem;
+    font-weight: bold;
+    color: $fg; 
+    margin-top: 1rem;
+  }
+}

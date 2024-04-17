@@ -124,3 +124,4 @@ systemctl start NetworkManager --user &
 
 # eww
 . ~/.config/bspwm/bar/init &
+ eww -c ~/.config/bspwm/bar/eww open --toggle  desktop

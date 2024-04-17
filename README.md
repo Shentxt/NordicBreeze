@@ -31,7 +31,7 @@ Read carefully: As not everything computers have the same features and kernel. I
 |    Distro    |                [EndevourOS](https://endeavouros.com/)                          |
 | :----------: | :----------------------------------------------------------------------------: |
 |     WM       |                 [BSPWM](https://github.com/baskerville/bspwm)                  |
-|   Terminal   | [Wezterm](https://github.com/wez/wezterm)-[Alacritty](https://alacritty)       |
+|   Terminal   |                   [Wezterm](https://github.com/wez/wezterm)                    |
 |   Widgets    |            [ElKowars wacky widgets](https://github.com/elkowar/eww)            |
 |     Bar      |            [Polybar](https://github.com/polybar/polybar)                       |
 |    Shell     |                [Starship](https://github.com/starship/starship)                |
@@ -55,9 +55,9 @@ Read carefully: As not everything computers have the same features and kernel. I
 <details>
 <summary><b><code>Desktop</code></b></summary>
 
-|Desk|Update|packer|
-|--|--|--|
-|![demo](/assets/Screen/desk.png "demo")|![demo](/assets/Screen/update.png "demo")|![demo](/assets/Screen/pack.png "demo")|
+|Desk|Update|packer|lockscreen|
+|--|--|--|--|
+|![demo](/assets/Screen/desk.png "demo")|![demo](/assets/Screen/update.png "demo")|![demo](/assets/Screen/pack.png "demo")|![demo](/assets/Screen/lock.png "demo")|
 
 </details>
 
