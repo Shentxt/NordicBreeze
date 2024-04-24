@@ -1,8 +1,12 @@
 <div align="center">
      <h1> 🌸 Shen ~ NordicBreeze Dotfiles 🌸</h1>
  </div>
- 
-![Logotype](/assets/bocchi.webp "a logo")
+
+<p align="center">
+  <picture>
+    <img src="/assets/bocchi.webp">
+  </picture>
+</p>
 
 # 🌿Sections
 
@@ -20,7 +24,7 @@ Read carefully: As not everything computers have the same features and kernel. I
 
 <p align="center">
   <picture>
-    <img src="/assets/color.png?sanitize=true" width="100%" height="16" />
+    <img src="/assets/color.png">
   </picture>
 </p>
 
@@ -124,7 +128,11 @@ Read carefully: As not everything computers have the same features and kernel. I
 
 # ━────────────━────────────━━────────────━━────────────━━────────────━━
 
-![Logotype](/assets/persona.png "a logo")
+<p align="center">
+  <picture>
+    <img src="/assets/persona.png">
+  </picture>
+</p>
 
 # 🌿Contact Me
 
