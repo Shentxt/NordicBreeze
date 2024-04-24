@@ -18,6 +18,12 @@ This setup aims for visual elegance and fluidity.
 
 Read carefully: As not everything computers have the same features and kernel. I ask you to clarify any problem that I present in the download or post of this one. This is in order to have feedback and be able to improve.
 
+<p align="center">
+  <picture>
+    <img src="/assets/color.png?sanitize=true" width="100%" height="16" />
+  </picture>
+</p>
+
 # ━────────────━────────────━━────────────━━────────────━━────────────━━
 
 ## 🌿Keys-Map

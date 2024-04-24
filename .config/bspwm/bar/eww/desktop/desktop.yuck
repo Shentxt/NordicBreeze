@@ -1,11 +1,11 @@
+;; Create your own quotes in this json directory
 (defpoll quote_text   :interval "10m" "~/.config/bspwm/bar/scripts/quotes quote")
 (defpoll quote_author :interval "10m" "~/.config/bspwm/bar/scripts/quotes author")
 
-(defpoll    panel_clock :interval "1s" `date "+%H:%M  |  %b. %d. %A"`)
-(defpoll    hour        :interval "1s" `date "+%H"`)
-(defpoll    minutes     :interval "1s" `date "+%M"`)
-(defpoll    seconds     :interval "1s" `date "+%S"`)
-(defpoll    date        :interval "1s" `date "+%b. %d. %A"`)
+(defpoll hour        :interval "1s" `date "+%H"`)
+(defpoll minutes     :interval "1s" `date "+%M"`)
+(defpoll seconds     :interval "1s" `date "+%S"`)
+(defpoll day_of_week :interval "1s" `date "+%B %A %D"`)
 
 (defvar desktop_reveal true)
 (defwidget desktop [] (box
@@ -63,7 +63,7 @@
     (box :class "separator" :height 2 :hexpand true) 
     (box :class "separator" :height 2 :hexpand true)
     (box :halign "center") 
-    (label :class "date" :text date)
+    (label :class "day_of_week" :text day_of_week)
     (box :class "separator" :height 2 :hexpand true) 
     (box :class "separator" :height 2 :hexpand true) 
         (quotes  

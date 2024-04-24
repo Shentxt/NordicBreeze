@@ -1,13 +1,18 @@
 .desktop{
+    background-color: $bg;
     .clock{color: $fg;}
         .time{
-            .hour{ color: $red; }
-            .minutes{ color: $magenta; }
-            .seconds{ color: $green; }
+            .hour{ color: $red;
+                   text-shadow: 2px 2px 4px $lavanda;}
+            .minutes{ color: $magenta; 
+                     text-shadow: 2px 2px 4px $lavanda;}
+            .seconds{ color: $green;
+                      text-shadow: 2px 2px 4px $lavanda;}
             border: 3px solid $yellow;
             border-radius: 12px;
             padding: .5em 1.3em;
             margin-bottom: 1rem;
+            background-color: $back;
             .hour, .minutes, .seconds, .separator{
             font-size: 8rem;
             font-family: minecraft;
@@ -17,24 +22,28 @@
          }
   }
 
-        .date{ 
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-            margin-top: 1rem;
+        .day_of_week{ 
+          font-size: 3.2rem;
+          margin-bottom: 1rem;
+          margin-top: 1rem;
+          text-shadow: 2px 2px 4px $lavanda;
         }
-
+        
      .timebox {
     font-family: "Font Awesome 6 Pro Solid";
     font-size: 1.2rem;
 
     &.magenta {
       color: $magenta;
+      text-shadow: 2px 2px 4px $lavanda;
     }
     &.green {
       color: $green;
+      text-shadow: 2px 2px 4px $lavanda;
     }
     &.yellow {
       color: $yellow;
+      text-shadow: 2px 2px 4px $lavanda;
     }
 }
 
@@ -43,5 +52,6 @@
     font-weight: bold;
     color: $fg; 
     margin-top: 1rem;
+    text-shadow: 2px 2px 4px $lavanda;
   }
 }
