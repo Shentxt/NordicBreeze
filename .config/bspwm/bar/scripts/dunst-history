@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# Define el archivo donde se guardará el historial de notificaciones
+HISTORI="$HOME/.dunst_history.json"
+
+# Usa dunstctl para obtener el historial y guardarlo en el archivo
+dunstctl history-pop > "$HISTORI"

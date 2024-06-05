@@ -30,7 +30,7 @@ while true; do
     case $option in
         1) transfer ;;
         2) receive ;;
-        3) break ;;
+        3) pkill kitty;; 
         *) echo "Invalid option" ;;
     esac
 done

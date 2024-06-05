@@ -141,7 +141,6 @@ Read carefully: As not everything computers have the same features and kernel. I
 
 ## 🌿Thanks
 
-- 🌸 [Bing-IA](https://www.bing.com/?setlang=es)
 - 🌸 [Arch](https://archlinux.org/)
 - 🌸 [Unixporn](https://www.reddit.com/r/unixporn/)
 - 🌸 [Persona](https://www.tumblr.com/jakku-san/620012944745512960/noosey-woosey-noosey-woosey-noosey-woosey)

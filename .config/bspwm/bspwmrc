@@ -40,10 +40,10 @@ bspc config single_monocle true
 bspc config borderless_monocle false
 bspc config gapless_monocle false
 
-bspc config left_padding 48
+bspc config left_padding 46
 bspc config right_padding 1
 bspc config bottom_padding 1
-bspc config top_padding 38
+bspc config top_padding 1
 bspc config focus_follows_pointer true
 bspc config pointer_follows_focus false
 bspc config pointer_motion_interval 5
@@ -74,13 +74,13 @@ bspc rule -a scratch sticky=on state=floating focus=on
 
 #|||----- Autostart -----|||#
 
-pkill xautolock
-
 # System Scripts
+source ~/.config/bspwm/bar/scripts/dunst-history &
 source ~/.config/bspwm/scripts/noti-update &
 source ~/.config/bspwm/scripts/checkconection &
 source ~/.config/bspwm/scripts/brightnes &
 source ~/.config/bspwm/scripts/welcome &
+source ~/.config/bspwm/scripts/lock &
 
 # Terminate already running polybar, stalonetray, sxhkd and dunst instances
 processes=("eww.*bar" "polybar" "sxhkd" "dunst" "stalonetray")
@@ -104,9 +104,6 @@ sxhkd -c "$HOME"/.config/bspwm/sxhkdrc &
 
 # Launch dunst notification daemon
 dunst -config "$HOME"/.config/bspwm/dunstrc &
-
-# xautolock
-xautolock -time 20 -locker 'notify-send "Mitsuru" "<span color='\''yellow'\''>Looks</span> like you'\''re going to be inactive for a while. I'\''m going to activate the screen lock to keep your data safe." -i ~/.config/bspwm/assets/icons/persona/mitsuru.png && sleep 50 && betterlockscreen -l' &
 
 # Launch polkit
 pidof -q polkit-gnome-authentication-agent-1 || { /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & }

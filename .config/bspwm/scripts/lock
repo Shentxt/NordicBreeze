@@ -1,0 +1,19 @@
+#!/bin/sh
+
+lock_screen() {
+    notify-send 'Mitsuru' 'The screen will <span color=yellow>lock in 10 seconds</span>' -i ~/.config/bspwm/assets/icons/persona/mitsuru.png
+    sleep 20
+    betterlockscreen --lock
+}
+
+unlock_screen() {
+    notify-send 'Mitsuru' 'The screen <span color=yellow>has been unlocked</span>' -i ~/.config/bspwm/assets/icons/persona/mitsuru.png
+}
+
+# Execute xidle lock
+xidlehook \
+    --not-when-audio \
+    --not-when-fullscreen \
+    --timer 20 \
+    "$(lock_screen)" \
+    "$(unlock_screen)"

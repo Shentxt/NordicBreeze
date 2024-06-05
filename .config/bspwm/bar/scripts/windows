@@ -7,122 +7,126 @@ else
     window_class=""
 fi
 
+ICON=""
+
 case $window_class in
     *firefox*)
-        echo ""  
+        ICON=""
         ;;
     *org.wezfurlong.wezterm*)
-        echo ""  
+        ICON=""
         ;;
     *Thunar*)
-        echo ""  
+        ICON=""
         ;;
     *copyq*)
-        echo "󱓥"  
+        ICON="󱓥"
         ;;
     *stalonetray*)
-        echo "󱊖"  
+        ICON="󱊖"
         ;;
     *blueberry.py*)
-        echo ""  
+        ICON=""
         ;;
     *pavucontrol*)
-        echo "󱡫"  
+        ICON="󱡫"
         ;;
     *YouTube*)
-        echo "󰗃"  
+        ICON="󰗃"
         ;;
     *code-oss*)
-        echo "󰨞"  
+        ICON="󰨞"
         ;;
     *Wezterm*)
-        echo ""  
+        ICON=""
         ;;
     *alacritty*)
-        echo ""  
+        ICON=""
         ;;
     *Alacritty*)
-        echo ""  
+        ICON=""
         ;;
     *gimp-2.10*)
-        echo "󱋆"  
+        ICON="󱋆"
         ;;
     *Mugshot*)
-        echo "󰚼"  
+        ICON="󰚼"
         ;;
     *xfce4-about*)
-        echo "󱋅"  
+        ICON="󱋅"
         ;;
     *audacity*)
-        echo ""  
+        ICON=""
         ;;
     *qt5ct*)
-        echo ""  
+        ICON=""
         ;;
     *cmake-gui*)
-        echo ""  
+        ICON=""
         ;;
     *amberol*)
-        echo "󱍙"  
+        ICON="󱍙"
         ;;
     *ark*)
-        echo ""  
+        ICON=""
         ;;
     *BleachBit*)
-        echo ""  
+        ICON=""
         ;;
     *clamtk*)
-        echo ""  
+        ICON=""
         ;;
     *nm-connection-editor*)
-        echo "󰤤"  
+        ICON="󰤤"
         ;;
     *avahi-discover*)
-        echo "󰤤"  
+        ICON="󰤤"
         ;;
     *corectrl*)
-        echo ""  
+        ICON=""
         ;;
     *soffice*)
-        echo "󰏆"  
+        ICON="󰏆"
         ;;
     *libreoffice*)
-        echo ""  
+        ICON=""
         ;;
     *atril*)
-        echo "󱔘"  
+        ICON="󱔘"
         ;;
     *lxappearance*)
-        echo "󱕷"  
+        ICON="󱕷"
         ;;
     *kvantummanager*)
-        echo "󱕷"  
+        ICON="󱕷"
         ;;
     *steam*)
-        echo "󰓓"  
+        ICON="󰓓"
         ;;
     *zenity*)
-        echo "󰓓"  
+        ICON="󰓓"
         ;;
     *retroarch*)
-        echo "󰺵"  
+        ICON="󰺵"
         ;;
     *heroic*)
-        echo "󰡶"  
+        ICON="󰡶"
         ;;
     *geany*)
-        echo ""  
+        ICON=""
         ;;
-     *Godot*)
-        echo ""  
+    *Godot*)
+        ICON=""
         ;;
-     *gpartedbin*)
-        echo "󱊞"  
+    *gpartedbin*)
+        ICON="󱊞"
         ;;
-     *electron*)
-        echo "󱀤"  
+    *electron*)
+        ICON="󱀤"
         ;;
-      *)
-        echo "󰋜"  
+    *)
+        ICON="󰋜"
         ;;
-     esac
+esac
+
+echo $ICON

@@ -22,7 +22,7 @@ hide() {
 
 	if pgrep -f 'eww.*bar'; then
 			(eww -c "$HOME"/.config/bspwm/bar open --toggle bar)
-      (eww -c "$HOME"/.config/bspwm/bar open --toggle bar2)
+#      (eww -c "$HOME"/.config/bspwm/bar open --toggle bar2)
 			(bspc config left_padding 2)
 			(bspc config right_padding 2)
 		fi
@@ -35,7 +35,7 @@ unhide() {
 
 	if pgrep -f 'eww.*bar'; then
     (eww -c "$HOME"/.config/bspwm/bar open --toggle bar)
-    (eww -c "$HOME"/.config/bspwm/bar open --toggle bar2)
+#    (eww -c "$HOME"/.config/bspwm/bar open --toggle bar2)
 			(bspc config left_padding "$L_Padding")
 			(bspc config right_padding "$R_Padding")
 		fi

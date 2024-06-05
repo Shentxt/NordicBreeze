@@ -41,7 +41,7 @@ while true; do
             fi
             ;;
         2)
-            break
+            pkill kitty
             ;;
         *)
             echo "invalid option"

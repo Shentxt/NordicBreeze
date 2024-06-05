@@ -34,11 +34,15 @@ Updating)
 	;;
 mpv)
 	eval "$consequences"
-	[ "$state" ] || echo "state=floating focus=on rectangle=849x477+0+0 center=on"
+	[ "$state" ] || echo "state=floating rectangle=849x477+0+0 center=on sticky=on"
 	;;
 Viewnior)
 	eval "$consequences"
 	[ "$state" ] || echo "state=floating focus=on center=on"
+	;;
+firefox-dialog)
+	eval "$consequences"
+	[ "$state" ] || echo "state=floating center=on sticky=on"
 	;;
 whatsapp-nativefier-d40211 | TelegramDesktop)
 	eval "$consequences"

@@ -1,0 +1,59 @@
+;; Vars ;;
+
+(defpoll windows :interval "1s" :initial "initial-value" :run-while windows-visible `~/.config/bspwm/bar/scripts/dunst-history`) 
+
+;; Widegets ;;
+
+(defwidget history []
+     (box :class "history"
+          :orientation "v"
+          :space-evenly "false"
+          :spacing 7 
+          (info)
+          (message)))
+          
+(defwidget info []
+	(box :orientation "v"
+		 :space-evenly "false"
+		 :class "usearch"
+		 :hexpand true
+         (label :class "text"
+				:xalign 0.5
+				:limit-width 30
+				:text "Dunstify History ")))
+(defwidget message []
+  (box :orientation "h"
+       :space-evenly "false"
+       :spacing 7
+       :hexpand true
+       (box :orientation "h"
+            :space-evenly "false"
+            :class "fetch"
+            :spacing 8
+            :hexpand true
+            (label :class "notification-icon"
+                   :halign "start"
+                   :text "󰣇") ;; Icono de notificación (reemplaza con el icono deseado)
+            (box 
+                 :space-evenly "false"
+                 (box :orientation "v"
+                      :spacing 3
+                      :halign "end"
+                      :hexpand true
+                      :style "margin-center: 10px;"
+                      (label :class "notification-summary" 
+                             :halign "start"
+                             :text "{{notification_summary}}") ;; Resumen de la notificación
+                      (label :class "notification-body"
+                             :halign "start"
+                             :text "{{notification_body}}") ;; Cuerpo de la notificación
+                      (label :class "notification-appname"
+                             :halign "start"
+                             :text "{{notification_appname}}")))))) ;; Nombre de la aplicación
+                       
+;; Windows ;;
+
+(defwindow history
+    :geometry (geometry :x "58px" :y "0px" :anchor "left center")
+    :wm-ignore false
+    (history))

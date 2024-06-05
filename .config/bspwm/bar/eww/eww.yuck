@@ -2,3 +2,5 @@
 (include "profilecard/profilecard.yuck")
 (include "musiccenter/musiccenter.yuck")
 (include "desktop/desktop.yuck")
+(include "history/history.yuck")
+

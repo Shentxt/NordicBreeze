@@ -124,6 +124,9 @@ case "$1" in
 --calendar)
   eww -c "$WIDGET_DIR" open --toggle date
   ;;
+--history)
+  eww -c "$WIDGET_DIR" open --toggle history
+  ;;
 *)
 	echo "invalid option"
 	;;

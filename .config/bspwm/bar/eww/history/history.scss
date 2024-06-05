@@ -1,0 +1,54 @@
+.history {
+  background-color: $bg;
+  border-radius: 12px;
+  border: 3px solid black;
+  border-color: $magenta;
+  min-width: 18rem;
+}
+
+.text {
+  background-color: $bg-alt;
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+  color: $fg;
+}
+
+.fetch {
+  background-color: transparent;
+  padding: 0.8rem 2rem 0.8rem 1rem;
+  border-radius: 0.5rem;
+  color: $fg;
+
+  .arch-icon {
+    font-family: Material Design Icons Desktop;
+    font-size: 3.2rem;
+    color: $archicon;
+    margin: 0px 22px 0px 82px;
+  }
+}
+
+.os-icon {
+  font-family: Material Design Icons Desktop;
+  font-size: 0.8rem;
+  color: $archicon;
+}
+
+.pkgs-icon {
+  font-family: Material Design Icons Desktop;
+  font-size: 0.8rem;
+  color: $yellow;
+}
+
+.wm-icon {
+  font-family: Material Design Icons Desktop;
+  font-size: 0.8rem;
+  color: $magenta;
+}
+
+.os-text,
+.pkgs-text,
+.wm-text {
+  font-family: minecraft;
+  font-weight: Bold;
+  font-size: 1rem;
+}
